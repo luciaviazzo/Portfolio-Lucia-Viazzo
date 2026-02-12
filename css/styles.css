@@ -646,13 +646,17 @@ footer {
         font-size: 0.85rem;
     }
 
+    .nav-links .hide-mobile {
+        display: none;
+    }
+
     .cv-download {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
     }
 
     .header-controls {
-        order: -1;
+        order: 1;
         margin-left: auto;
     }
 
