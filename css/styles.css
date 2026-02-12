@@ -1044,3 +1044,24 @@ body::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .modal-header h3,
+[data-theme="dark"] .modal-body h4 {
+    color: var(--dark);
+}
+
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .modal-body p,
+[data-theme="dark"] .modal-body ul li {
+    color: var(--text);
+}
+
+[data-theme="dark"] .tag {
+    color: var(--accent);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .hero-subtitle {
+    color: var(--accent);
+}
