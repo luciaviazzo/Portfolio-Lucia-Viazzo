@@ -90,3 +90,41 @@ if (hamburgerBtn && navLinks) {
         navLinks.classList.toggle('active');
     });
 }
+
+// Project Modals
+document.querySelectorAll('.project-card[data-modal]').forEach(card => {
+    card.addEventListener('click', () => {
+        const modalId = card.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const overlay = btn.closest('.modal-overlay');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+});

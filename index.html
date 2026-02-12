@@ -77,7 +77,7 @@
         <div class="container">
             <h2 class="section-title" data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-modal="modal-linkedunq">
                     <div class="project-image">💼</div>
                     <div class="project-content">
                         <h3 class="project-title" data-es="LinkedUNQ - Plataforma Universitaria" data-en="LinkedUNQ - University Platform">LinkedUNQ - Plataforma Universitaria</h3>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-modal="modal-persistencia">
                     <div class="project-image">�</div>
                     <div class="project-content">
                         <h3 class="project-title" data-es="Sistema de Persistencia Distribuída" data-en="Distributed Persistence System">Sistema de Persistencia Distribuída</h3>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-modal="modal-fullstack">
                     <div class="project-image">🎓</div>
                     <div class="project-content">
                         <h3 class="project-title" data-es="Desarrollo Web Full Stack" data-en="Full Stack Web Development">Desarrollo Web Full Stack</h3>
@@ -130,6 +130,115 @@
             </div>
         </div>
     </section>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modal-linkedunq">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">💼</span>
+                <h3 data-es="LinkedUNQ - Plataforma Universitaria" data-en="LinkedUNQ - University Platform">LinkedUNQ - Plataforma Universitaria</h3>
+            </div>
+            <div class="modal-body">
+                <p data-es="Aplicación web full stack diseñada para conectar estudiantes de la Universidad Nacional de Quilmes con oportunidades laborales y académicas. El sistema permite a los estudiantes crear perfiles profesionales, buscar ofertas y postularse directamente." data-en="Full stack web application designed to connect students from the National University of Quilmes with job and academic opportunities. The system allows students to create professional profiles, search for offers and apply directly.">Aplicación web full stack diseñada para conectar estudiantes de la Universidad Nacional de Quilmes con oportunidades laborales y académicas. El sistema permite a los estudiantes crear perfiles profesionales, buscar ofertas y postularse directamente.</p>
+                <h4 data-es="Características principales" data-en="Key features">Características principales</h4>
+                <ul>
+                    <li data-es="APIs REST modulares desarrolladas con NestJS y TypeScript" data-en="Modular REST APIs developed with NestJS and TypeScript">APIs REST modulares desarrolladas con NestJS y TypeScript</li>
+                    <li data-es="Frontend responsive con React y Tailwind CSS" data-en="Responsive frontend with React and Tailwind CSS">Frontend responsive con React y Tailwind CSS</li>
+                    <li data-es="Autenticación y autorización de usuarios" data-en="User authentication and authorization">Autenticación y autorización de usuarios</li>
+                    <li data-es="Sistema de búsqueda y filtrado de oportunidades" data-en="Opportunity search and filtering system">Sistema de búsqueda y filtrado de oportunidades</li>
+                </ul>
+                <div class="modal-tags">
+                    <span class="tag">NestJS</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Tailwind CSS</span>
+                </div>
+                <div class="modal-buttons">
+                    <a href="#" class="modal-btn modal-btn-demo" target="_blank" data-es="Ver Demo" data-en="View Demo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Ver Demo
+                    </a>
+                    <a href="#" class="modal-btn modal-btn-github" target="_blank" data-es="Ver Código" data-en="View Code">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Ver Código
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-persistencia">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🗄️</span>
+                <h3 data-es="Sistema de Persistencia Distribuída" data-en="Distributed Persistence System">Sistema de Persistencia Distribuída</h3>
+            </div>
+            <div class="modal-body">
+                <p data-es="API REST backend robusta construida con Java Spring Boot, integrando múltiples motores de bases de datos para optimizar el almacenamiento y consulta de datos según su naturaleza." data-en="Robust backend REST API built with Java Spring Boot, integrating multiple database engines to optimize data storage and querying based on data nature.">API REST backend robusta construida con Java Spring Boot, integrando múltiples motores de bases de datos para optimizar el almacenamiento y consulta de datos según su naturaleza.</p>
+                <h4 data-es="Características principales" data-en="Key features">Características principales</h4>
+                <ul>
+                    <li data-es="Arquitectura en capas con separación clara de responsabilidades" data-en="Layered architecture with clear separation of concerns">Arquitectura en capas con separación clara de responsabilidades</li>
+                    <li data-es="Integración con PostgreSQL para datos relacionales" data-en="PostgreSQL integration for relational data">Integración con PostgreSQL para datos relacionales</li>
+                    <li data-es="Integración con MongoDB para datos no relacionales" data-en="MongoDB integration for non-relational data">Integración con MongoDB para datos no relacionales</li>
+                    <li data-es="Tests automatizados con cobertura completa" data-en="Automated tests with full coverage">Tests automatizados con cobertura completa</li>
+                </ul>
+                <div class="modal-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                </div>
+                <div class="modal-buttons">
+                    <a href="#" class="modal-btn modal-btn-demo" target="_blank" data-es="Ver Demo" data-en="View Demo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Ver Demo
+                    </a>
+                    <a href="#" class="modal-btn modal-btn-github" target="_blank" data-es="Ver Código" data-en="View Code">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Ver Código
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-fullstack">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🎓</span>
+                <h3 data-es="Desarrollo Web Full Stack" data-en="Full Stack Web Development">Desarrollo Web Full Stack</h3>
+            </div>
+            <div class="modal-body">
+                <p data-es="Conjunto de proyectos desarrollados durante el programa de formación en Fundación Pescar, donde se aplicaron metodologías ágiles y buenas prácticas del desarrollo web moderno en un entorno colaborativo." data-en="Set of projects developed during the training program at Fundación Pescar, where agile methodologies and modern web development best practices were applied in a collaborative environment.">Conjunto de proyectos desarrollados durante el programa de formación en Fundación Pescar, donde se aplicaron metodologías ágiles y buenas prácticas del desarrollo web moderno en un entorno colaborativo.</p>
+                <h4 data-es="Características principales" data-en="Key features">Características principales</h4>
+                <ul>
+                    <li data-es="Desarrollo frontend con JavaScript moderno" data-en="Frontend development with modern JavaScript">Desarrollo frontend con JavaScript moderno</li>
+                    <li data-es="Backend con Node.js y Express" data-en="Backend with Node.js and Express">Backend con Node.js y Express</li>
+                    <li data-es="Control de versiones con Git y GitHub" data-en="Version control with Git and GitHub">Control de versiones con Git y GitHub</li>
+                    <li data-es="Metodología Scrum y trabajo en equipo" data-en="Scrum methodology and teamwork">Metodología Scrum y trabajo en equipo</li>
+                </ul>
+                <div class="modal-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Scrum</span>
+                </div>
+                <div class="modal-buttons">
+                    <a href="#" class="modal-btn modal-btn-demo" target="_blank" data-es="Ver Demo" data-en="View Demo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Ver Demo
+                    </a>
+                    <a href="#" class="modal-btn modal-btn-github" target="_blank" data-es="Ver Código" data-en="View Code">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Ver Código
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="habilidades" class="skills">
         <div class="container">
