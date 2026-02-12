@@ -1,17 +1,17 @@
 /* Extracted styles from portfolio.html */
 :root {
-    --primary: #E8D5E8;
-    --secondary: #D4C5E2;
-    --accent: #C8B8DB;
-    --dark: #3D3842;
-    --light: #FAF8FC;
-    --text: #4A4454;
-    --border: #E5DBE8;
-    --bg-gradient-1: #FAF8FC;
-    --bg-gradient-2: #FFF5F9;
+    --primary: #F0D6EC;
+    --secondary: #DAC0E6;
+    --accent: #A07AB8;
+    --dark: #3A2D44;
+    --light: #FDFBFC;
+    --text: #4A3B55;
+    --border: #E4D4EA;
+    --bg-gradient-1: #FDFBFC;
+    --bg-gradient-2: #F6EEF9;
     --card-bg: white;
-    --decorative-1: rgba(232, 213, 232, 0.3);
-    --decorative-2: rgba(212, 197, 226, 0.2);
+    --decorative-1: rgba(160, 122, 184, 0.35);
+    --decorative-2: rgba(218, 192, 230, 0.4);
 }
 
 [data-theme="dark"] {
@@ -357,7 +357,7 @@ h1 {
 .tech-highlight {
     color: var(--accent);
     font-weight: 500;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, #9B7AB0, #7A5A9E);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -809,4 +809,11 @@ body::after {
     background: rgba(26, 21, 32, 0.4);
     text-shadow: 0 2px 4px rgba(26, 21, 32, 0.9);
     box-shadow: 0 4px 12px rgba(74, 63, 85, 0.4);
+}
+
+[data-theme="dark"] .tech-highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
