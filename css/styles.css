@@ -505,54 +505,65 @@ h1 {
     background: linear-gradient(to bottom, transparent, rgba(232, 213, 232, 0.1), transparent);
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.skills-categories {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .skill-category {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(160, 122, 184, 0.15);
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border);
 }
 
-.skill-category:hover {
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(200, 184, 219, 0.15);
+.skill-category:last-child {
+    border-bottom: none;
 }
 
 .skill-category h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--dark);
-    margin-bottom: 1.2rem;
     font-weight: 500;
+    min-width: 130px;
+    white-space: nowrap;
 }
 
-.skill-list {
-    list-style: none;
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
 }
 
-.skill-list li {
-    padding: 0.6rem 0;
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+}
+
+.skill-item i {
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.skill-item span {
+    font-size: 0.85rem;
     color: var(--text);
-    font-size: 0.95rem;
-    font-weight: 300;
-    position: relative;
-    padding-left: 1.2rem;
-}
-
-.skill-list li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.7rem;
+    font-weight: 400;
+    text-align: center;
 }
 
 /* Contact Section */
@@ -971,9 +982,22 @@ footer {
         height: 45px;
     }
 
-    .projects-grid,
-    .skills-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-categories {
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .skill-category h3 {
+        min-width: unset;
     }
 
     .section-title {
@@ -1064,4 +1088,8 @@ body::after {
 
 [data-theme="dark"] .hero-subtitle {
     color: var(--accent);
+}
+
+[data-theme="dark"] .devicon-github-original {
+    color: var(--text);
 }
