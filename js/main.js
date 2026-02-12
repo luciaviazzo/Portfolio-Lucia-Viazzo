@@ -22,11 +22,14 @@ const cvDownload = document.getElementById('cvDownload');
 if (cvDownload) {
     cvDownload.addEventListener('click', (e) => {
         e.preventDefault();
-        // Replace 'cv.pdf' with your CV file path
-        const cvUrl = 'assets/cv.pdf';
+        // Get current language and download corresponding CV
+        const currentLanguage = localStorage.getItem('language') || 'es';
+        const cvUrl = currentLanguage === 'es' ? 'assets/CV Lucia Viazzo .pdf' : 'assets/CV Lucia Viazzo - English.pdf';
+        const fileName = currentLanguage === 'es' ? 'CV_Lucia_Viazzo.pdf' : 'CV_Lucia_Viazzo_English.pdf';
+        
         const link = document.createElement('a');
         link.href = cvUrl;
-        link.download = 'CV_TuNombre.pdf';
+        link.download = fileName;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

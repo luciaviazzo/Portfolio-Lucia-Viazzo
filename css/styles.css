@@ -74,6 +74,7 @@ nav {
     display: flex;
     gap: 2.5rem;
     list-style: none;
+    margin-top: 0.5rem;
 }
 
 .nav-links a {
