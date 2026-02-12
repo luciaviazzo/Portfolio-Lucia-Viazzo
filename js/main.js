@@ -70,5 +70,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+        // Close hamburger menu after clicking a link
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburgerBtn');
+        if (navLinks && hamburger) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
     });
 });
+
+// Hamburger Menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}

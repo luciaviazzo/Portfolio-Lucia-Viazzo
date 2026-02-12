@@ -93,6 +93,40 @@ nav {
     text-shadow: 0 3px 6px rgba(255, 255, 255, 0.9);
 }
 
+/* Hamburger button - hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -639,20 +673,64 @@ footer {
     nav {
         flex-wrap: wrap;
         gap: 1rem;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
     }
 
     .nav-links {
-        gap: 1rem;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        gap: 0;
+        padding: 1rem 0;
         font-size: 0.85rem;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links .hide-mobile {
         display: none;
     }
 
+    .nav-links.active .hide-mobile {
+        display: block;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
     .cv-download {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 0.85rem;
+        display: inline-flex;
+        justify-content: center;
+        background: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: var(--dark) !important;
+        transform: none;
+    }
+
+    .cv-download:hover {
+        transform: translateY(-2px);
+        border: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.4);
     }
 
     .header-controls {
