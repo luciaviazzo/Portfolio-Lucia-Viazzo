@@ -58,7 +58,11 @@ header {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(190, 176, 211, 0.2);
     border-bottom: 1px solid var(--border);
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 header::before {
@@ -305,7 +309,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    padding: 6rem 0 8rem;
+    padding: 10rem 0 8rem;
     animation: fadeIn 1.2s ease-out;
 }
 
