@@ -309,6 +309,26 @@ h1 {
     font-weight: 300;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.7s forwards;
+    text-align: justify;
+}
+
+.hero-description p {
+    margin-bottom: 1.2rem;
+}
+
+.hero-description p:last-child {
+    margin-bottom: 0;
+}
+
+.tech-highlight {
+    color: var(--accent);
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
 }
 
 .cta-button {
@@ -595,6 +615,18 @@ footer {
     }
     75% {
         transform: translate(-10px, 5px) rotate(3deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 

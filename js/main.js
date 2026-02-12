@@ -54,7 +54,7 @@ if (langToggle) {
 function updateLanguage(lang) {
     if (langText) langText.textContent = lang === 'es' ? 'EN' : 'ES';
     document.querySelectorAll('[data-es][data-en]').forEach(element => {
-        element.textContent = element.getAttribute(`data-${lang}`);
+        element.innerHTML = element.getAttribute(`data-${lang}`);
     });
     document.documentElement.lang = lang;
 }
