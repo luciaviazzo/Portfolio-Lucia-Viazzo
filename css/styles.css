@@ -490,6 +490,7 @@ h1 {
     line-height: 1.6;
     margin-bottom: 1.2rem;
     font-weight: 400;
+    text-align: justify !important;
 }
 
 .project-tags {
