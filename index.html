@@ -123,25 +123,25 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-modal="modal-persistencia">
+                <div class="project-card" data-modal="modal-concuconvolution">
                     <div class="project-image">
-                        <img src="assets/images/persistencia.png" alt="Sistema de Persistencia">
+                        <img src="assets/images/concuColvolution.jpg" alt="Concu Convolution">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-es="Sistema de Persistencia Distribuída"
-                            data-en="Distributed Persistence System">Sistema de Persistencia Distribuída</h3>
+                        <h3 class="project-title" data-es="Concu Convolution – Procesamiento Concurrente de Imágenes"
+                            data-en="Concu Convolution – Concurrent Image Processing">Concu Convolution – Procesamiento Concurrente de Imágenes</h3>
                         <p class="project-description" style="text-align: justify;"
-                            data-es="API REST backend con Java Spring Boot integrando bases de datos relacionales y no relacionales. Arquitectura en capas con tests automatizados."
-                            data-en="Backend REST API with Java Spring Boot integrating relational and non-relational databases. Layered architecture with automated tests.">
-                            API REST backend con Java Spring Boot integrando bases de datos relacionales y no
-                            relacionales.
-                            Arquitectura en capas con tests automatizados.
+                            data-es="Aplicación de procesamiento de imágenes mediante filtros de convolución implementados con concurrencia y paralelismo, optimizando el rendimiento del tratamiento de imágenes."
+                            data-en="Image processing application using convolution filters implemented with concurrency and parallelism, optimizing image processing performance.">
+                            Aplicación de procesamiento de imágenes mediante filtros de convolución implementados con
+                            concurrencia y paralelismo, optimizando el rendimiento del tratamiento de imágenes.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Java</span>
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">MongoDB</span>
+                            <span class="tag">AWT</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Matplotlib</span>
                         </div>
                     </div>
                 </div>
@@ -248,49 +248,50 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-persistencia">
+    <div class="modal-overlay" id="modal-concuconvolution">
         <div class="modal">
             <button class="modal-close">&times;</button>
             <div class="modal-header">
-                <span class="modal-icon">🗄️</span>
-                <h3 data-es="Sistema de Persistencia Distribuída" data-en="Distributed Persistence System">Sistema de
-                    Persistencia Distribuída</h3>
+                <span class="modal-icon">🖼️</span>
+                <h3 data-es="Concu Convolution – Procesamiento Concurrente de Imágenes" data-en="Concu Convolution – Concurrent Image Processing">Concu Convolution – Procesamiento Concurrente de Imágenes</h3>
             </div>
             <div class="modal-body">
-                <p data-es="API REST backend robusta construida con Java Spring Boot, integrando múltiples motores de bases de datos para optimizar el almacenamiento y consulta de datos según su naturaleza."
-                    data-en="Robust backend REST API built with Java Spring Boot, integrating multiple database engines to optimize data storage and querying based on data nature.">
-                    API REST backend robusta construida con Java Spring Boot, integrando múltiples motores de bases de
-                    datos para optimizar el almacenamiento y consulta de datos según su naturaleza.</p>
+                <p data-es="ConcuConvolution es una aplicación desarrollada en Java para el procesamiento de imágenes mediante filtros de convolución. El proyecto fue realizado como proyecto universitario grupal, con el objetivo de analizar el impacto de la programación concurrente en el rendimiento del procesamiento de imágenes."
+                    data-en="ConcuConvolution is a Java application for image processing using convolution filters. It was developed as a group university project, with the goal of analyzing the impact of concurrent programming on image processing performance.">
+                    ConcuConvolution es una aplicación desarrollada en Java para el procesamiento de imágenes mediante filtros de convolución. El proyecto fue realizado como proyecto universitario grupal, con el objetivo de analizar el impacto de la programación concurrente en el rendimiento del procesamiento de imágenes.</p>
+                <p data-es="La aplicación permite aplicar distintos filtros sobre imágenes tanto de forma secuencial como concurrente, facilitando la comparación de tiempos de ejecución entre ambos enfoques. También permite configurar parámetros como la cantidad de hilos, el modo de ejecución, el tamaño de buffers y los filtros a aplicar mediante archivos de configuración externos."
+                    data-en="The application allows applying different filters to images both sequentially and concurrently, making it easy to compare execution times between both approaches. It also allows configuring parameters such as the number of threads, execution mode, buffer sizes and filters to apply through external configuration files.">
+                    La aplicación permite aplicar distintos filtros sobre imágenes tanto de forma secuencial como concurrente, facilitando la comparación de tiempos de ejecución entre ambos enfoques. También permite configurar parámetros como la cantidad de hilos, el modo de ejecución, el tamaño de buffers y los filtros a aplicar mediante archivos de configuración externos.</p>
+                <p data-es="Además, el sistema genera benchmarks automáticos a partir de las ejecuciones realizadas, cuyos resultados son posteriormente analizados mediante scripts en Python para visualizar y comparar el impacto de la concurrencia en la performance."
+                    data-en="Additionally, the system automatically generates benchmarks from the executions performed, whose results are later analyzed using Python scripts to visualize and compare the impact of concurrency on performance.">
+                    Además, el sistema genera benchmarks automáticos a partir de las ejecuciones realizadas, cuyos resultados son posteriormente analizados mediante scripts en Python para visualizar y comparar el impacto de la concurrencia en la performance.</p>
                 <h4 data-es="Características principales" data-en="Key features">Características principales</h4>
                 <ul>
-                    <li data-es="Arquitectura en capas con separación clara de responsabilidades"
-                        data-en="Layered architecture with clear separation of concerns">Arquitectura en capas con
-                        separación clara de responsabilidades</li>
-                    <li data-es="Integración con PostgreSQL para datos relacionales"
-                        data-en="PostgreSQL integration for relational data">Integración con PostgreSQL para datos
-                        relacionales</li>
-                    <li data-es="Integración con MongoDB para datos no relacionales"
-                        data-en="MongoDB integration for non-relational data">Integración con MongoDB para datos no
-                        relacionales</li>
-                    <li data-es="Tests automatizados con cobertura completa"
-                        data-en="Automated tests with full coverage">Tests automatizados con cobertura completa</li>
+                    <li data-es="Procesamiento de imágenes mediante filtros de convolución (kernels 3x3 y 5x5)."
+                        data-en="Image processing using convolution filters (3x3 and 5x5 kernels).">Procesamiento de imágenes mediante filtros de convolución (kernels 3x3 y 5x5).</li>
+                    <li data-es="Implementación de ejecución secuencial y concurrente para comparación de performance."
+                        data-en="Implementation of sequential and concurrent execution for performance comparison.">Implementación de ejecución secuencial y concurrente para comparación de performance.</li>
+                    <li data-es="Desarrollo de un ThreadPool propio para la ejecución de tareas concurrentes."
+                        data-en="Development of a custom ThreadPool for concurrent task execution.">Desarrollo de un ThreadPool propio para la ejecución de tareas concurrentes.</li>
+                    <li data-es="Implementación de buffer circular thread-safe para la comunicación entre tareas."
+                        data-en="Implementation of a thread-safe circular buffer for inter-task communication.">Implementación de buffer circular thread-safe para la comunicación entre tareas.</li>
+                    <li data-es="Gestión de dependencias entre regiones de imagen para asegurar correctitud en la ejecución paralela."
+                        data-en="Management of dependencies between image regions to ensure correctness in parallel execution.">Gestión de dependencias entre regiones de imagen para asegurar correctitud en la ejecución paralela.</li>
+                    <li data-es="Configuración dinámica de parámetros de ejecución mediante archivos externos."
+                        data-en="Dynamic configuration of execution parameters through external files.">Configuración dinámica de parámetros de ejecución mediante archivos externos.</li>
+                    <li data-es="Generación automática de benchmarks de rendimiento."
+                        data-en="Automatic generation of performance benchmarks.">Generación automática de benchmarks de rendimiento.</li>
+                    <li data-es="Scripts de análisis y visualización de resultados experimentales."
+                        data-en="Scripts for analysis and visualization of experimental results.">Scripts de análisis y visualización de resultados experimentales.</li>
                 </ul>
                 <div class="modal-tags">
                     <span class="tag">Java</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">MongoDB</span>
+                    <span class="tag">AWT</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib</span>
                 </div>
                 <div class="modal-buttons">
-                    <a href="#" class="modal-btn modal-btn-demo" target="_blank" data-es="Ver Demo" data-en="View Demo">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        Ver Demo
-                    </a>
                     <a href="#" class="modal-btn modal-btn-github" target="_blank" data-es="Ver Código"
                         data-en="View Code">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
