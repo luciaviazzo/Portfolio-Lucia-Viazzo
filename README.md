@@ -19,6 +19,17 @@ Opcion simple: abrir index.html en el navegador.
 Opcion recomendada (servidor local):
 
 ```powershell
+npm install
+npm run dev
+```
+
+Luego abrir:
+
+http://localhost:5500
+
+Alternativa sin Node:
+
+```powershell
 python -m http.server 8000
 ```
 

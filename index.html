@@ -1,376 +1,457 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lucía Viazzo — Desarrolladora Full Stack</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucía Viazzo — Desarrolladora Full Stack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursor-ring"></div>
-
-    <nav>
-        <div class="nav-logo">LV<span>.</span></div>
-        <ul>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li>
-                <a href="https://drive.google.com/file/d/16HG1bLRiZUEOXHiC8XaxcQBFrcjrPx_B/view?usp=sharing" target="_blank">
-                    CV
-                </a>
-            </li>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav>
+    <div class="nav-logo">LV<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mi</a></li>
+      <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+      <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+      <li><a href="#recorrido" data-i18n="nav.journey">Recorrido</a></li>
+      <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+      <li><a href="https://drive.google.com/file/d/16HG1bLRiZUEOXHiC8XaxcQBFrcjrPx_B/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" data-i18n="nav.cv">CV</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <div class="toggle-wrap">
+        <span class="toggle-icon">&#9728;&#65039;</span>
+        <div class="theme-toggle" id="themeToggleSwitch" title="Cambiar tema"></div>
+        <span class="toggle-icon">&#127769;</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mi</a></li>
+        <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+        <li><a href="#recorrido" data-i18n="nav.journey">Recorrido</a></li>
+        <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="https://drive.google.com/file/d/16HG1bLRiZUEOXHiC8XaxcQBFrcjrPx_B/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer" data-i18n="nav.cv">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="hero">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="hero-content">
+      <div class="hero-tag" data-i18n="hero.tag">Disponible para trabajar</div>
+      <h1 class="hero-name">Lucia<br /><em>Viazzo</em></h1>
+      <div class="hero-title" data-i18n="hero.title">Full Stack Developer · Backend · Datos &amp; IA</div>
+      <p class="hero-desc" data-i18n-html="hero.desc">Disfruto resolver problemas y entender como funcionan las cosas. Me interesa construir
+        <strong>software solido</strong>, explorar <strong>nuevas tecnologias</strong> y trabajar los detalles hasta
+        encontrar la <strong>mejor solucion</strong>.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="photo-wrapper">
+        <div class="photo-frame">
+          <img src="assets/images/perfil.jpeg" alt="Lucia Viazzo" />
+        </div>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#proyectos" class="btn-primary" data-i18n="hero.ctaProjects">Ver proyectos</a>
+      <a href="#contacto" class="btn-ghost" data-i18n="hero.ctaContact">Contactarme</a>
+    </div>
+  </section>
+  <section id="sobre-mi">
+    <div class="section-tag" data-i18n="about.sectionTag">Sobre mi</div>
+    <h2 class="section-title" data-i18n-html="about.title">Estudiante de Lic. en Informatica<br /><em>y Tecnicatura en Programacion</em></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <ul class="about-list">
+          <li>Estudiante avanzada de la <strong>Licenciatura en Informatica en la UNQ</strong>.</li>
+          <li>Este anio finalizo la <strong>Tecnicatura en Programacion Informatica</strong>.</li>
+          <li>Mi foco esta en el desarrollo <strong>backend</strong> - APIs, bases de datos, arquitectura y logica de
+            negocio.</li>
+          <li>Me estoy formando en <strong>Datos e IA</strong> a traves de la Tecnicatura en Ciencia de Datos e IA.</li>
+          <li>Me gusta aprender cosas nuevas, probar herramientas distintas y dedicar tiempo a entender realmente lo que
+            estoy haciendo.</li>
+          <li>Busco mi <strong>primera oportunidad en IT</strong> para seguir creciendo, ganar experiencia y construir
+            proyectos que me desafien.</li>
         </ul>
-    </nav>
-
-    <section id="hero">
-        <div class="hero-bg-orb orb1"></div>
-        <div class="hero-bg-orb orb2"></div>
-
-        <div class="hero-content">
-            <div class="hero-tag">Disponible para trabajar</div>
-            <h1 class="hero-name">Lucía<br /><em>Viazzo</em></h1>
-            <div class="hero-title">Desarrolladora Full Stack · Backend · IA & Datos</div>
-            <p class="hero-desc">
-                Disfruto resolver problemas y entender cómo funcionan las cosas — eso fue lo que me trajo a la
-                informática. Me interesa construir <strong>software sólido</strong>, explorar <strong>nuevas
-                    tecnologías</strong> y trabajar los
-                detalles hasta encontrar la <strong>mejor solución</strong>.
-            </p>
-            <div class="hero-ctas">
-                <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-                <a href="#contacto" class="btn-ghost">Contactarme</a>
-            </div>
+      </div>
+      <div class="about-values reveal">
+        <div class="value-card">
+          <div class="value-title">Atencion al detalle</div>
+          <div class="value-desc">Trabajo de forma ordenada y detallista, buscando que las soluciones sean claras y
+            consistentes.</div>
         </div>
-
-        <div class="hero-visual">
-            <div class="photo-wrapper">
-                <div class="photo-frame">
-                    <img src="assets/images/perfil.jpeg" alt="Lucía Viazzo" />
-                </div>
-                <div class="photo-overlay">
-                    <div class="photo-overlay-tag">Full Stack · Backend · IA & Datos</div>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-title">Adaptabilidad</div>
+          <div class="value-desc">Disfruto enfrentar desafios nuevos, aprendiendo rapido y adaptandome a distintos
+            contextos.</div>
         </div>
-    </section>
-
-    <section id="sobre-mi">
-        <div class="section-label">01 — Sobre mí</div>
-        <h2 class="section-title">Estudiante de Lic. en Informática<br /><em>y Tecnicatura en Programación</em></h2>
-
-        <div class="about-grid">
-            <div class="about-text reveal">
-                <p>
-                    Soy Lucía y estudio la <strong>Licenciatura en Informática en la UNQ</strong>. Este año termino la
-                    Tecnicatura en Programación y continúo la carrera mientras me sigo formando en áreas como
-                    <strong>desarrollo de software, IA y datos</strong>.
-                </p>
-                <p>
-                    Llegué a la informática porque siempre me gustó entender cómo funcionan las cosas y encontrarle
-                    lógica a los problemas. Con el tiempo descubrí que disfruto especialmente <strong>pensar
-                        estructuras,
-                        conectar piezas</strong> y lograr que todo funcione.
-                </p>
-                <p>
-                    A lo largo de la carrera trabajé con distintas tecnologías y proyectos que me ayudaron a desarrollar
-                    una forma de trabajar muy <strong>enfocada en los detalles</strong>. Me gusta aprender cosas nuevas,
-                    probar
-                    herramientas distintas y dedicar tiempo a <strong>entender realmente</strong> lo que estoy haciendo.
-                </p>
-                <p>
-                    Actualmente estoy buscando mi <strong>primera oportunidad en IT</strong> para seguir creciendo,
-                    ganar experiencia y seguir construyendo proyectos que me desafíen.
-                </p>
-            </div>
-
-            <div class="about-values reveal">
-                <div class="value-item">
-                    <div class="value-title">Atención al detalle</div>
-                    <div class="value-desc">Trabajo de forma ordenada y detallista, buscando que las soluciones sean
-                        claras y consistentes.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-title">Adaptabilidad</div>
-                    <div class="value-desc">Disfruto enfrentar desafíos nuevos, aprendiendo rápido y adaptándome a
-                        distintos contextos.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-title">Curiosidad</div>
-                    <div class="value-desc">Cuando algo no funciona, investigo, pruebo alternativas y profundizo hasta
-                        entenderlo de verdad.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-title">Trabajo colaborativo</div>
-                    <div class="value-desc">Disfruto trabajar con personas que compartan ganas de aprender, intercambiar
-                        ideas y construir buenas soluciones en conjunto.</div>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-title">Curiosidad y persistencia</div>
+          <div class="value-desc">Cuando algo no funciona, investigo, pruebo alternativas y profundizo hasta entenderlo
+            de verdad.</div>
         </div>
-    </section>
-
-    <section id="stack">
-        <div class="section-label">02 — Stack tecnológico</div>
-        <h2 class="section-title">Las herramientas<br /><em>con las que construyo</em></h2>
-
-        <div class="stack-grid reveal">
-            <div class="stack-category">
-                <div class="stack-cat-title">Backend</div>
-                <div class="stack-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">NestJS</span>
-                </div>
-            </div>
-            <div class="stack-category">
-                <div class="stack-cat-title">Frontend</div>
-                <div class="stack-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                </div>
-            </div>
-            <div class="stack-category">
-                <div class="stack-cat-title">Bases de datos</div>
-                <div class="stack-tags">
-                    <span class="tag">SQL</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Neo4j</span>
-                    <span class="tag">Redis</span>
-                </div>
-            </div>
-            <div class="stack-category">
-                <div class="stack-cat-title">Testing</div>
-                <div class="stack-tags">
-                    <span class="tag">JUnit</span>
-                    <span class="tag">Mockito</span>
-                    <span class="tag">Jest</span>
-                </div>
-            </div>
-            <div class="stack-category">
-                <div class="stack-cat-title">Herramientas</div>
-                <div class="stack-tags">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">Postman</span>
-                    <span class="tag">Jira</span>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-title">Trabajo colaborativo</div>
+          <div class="value-desc">Disfruto trabajar con personas que compartan ganas de aprender, intercambiar ideas y
+            construir buenas soluciones en conjunto.</div>
         </div>
-    </section>
-
-    <section id="proyectos">
-        <div class="section-label">03 — Proyectos</div>
-        <h2 class="section-title">Proyectos</h2>
-
-        <div class="projects-list">
-
-            <div class="project-card reveal">
-                <div class="project-num">01</div>
-                <div class="project-body">
-                    <div class="project-img">
-                        <img src="assets/images/linkedUNQ.jpg" alt="LinkedUNQ" />
-                    </div>
-                    <div class="project-subtitle">API REST · Gestión de Roles · CRUD Complejo · SCRUM</div>
-                    <div class="project-name">LinkedUNQ</div>
-                    <p class="project-desc">
-                        <strong>Plataforma de empleo para estudiantes de la UNQ</strong>,
-                        desarrollada en equipo bajo metodologías ágiles y enfocada en conectar
-                        perfiles junior con empresas del sector tecnológico.
-                    </p>
-                    <p class="project-desc">
-                        El sistema implementa roles de estudiante, empresa y administrador.
-                        Incluye creación y validación de perfiles, publicación de ofertas
-                        laborales, exploración de búsquedas y gestión de postulaciones dentro
-                        de una misma plataforma.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">NestJS</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Vite</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Prisma</span>
-                        <span class="tag">Jest</span>
-                    </div>
-                </div>
-                <a href="https://linked-unq.vercel.app/" class="project-arrow" target="_blank"
-                    rel="noopener noreferrer">→</a>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-num">02</div>
-                <div class="project-body">
-                    <div class="project-img">
-                        <img src="assets/images/bugBusters.png" alt="Bug Busters" />
-                    </div>
-                    <div class="project-subtitle">API REST · Arquitectura Multicapa · Persistencia Políglota</div>
-                    <div class="project-name">Epersgeist</div>
-                    <p class="project-desc">
-                        <strong>Sistema backend de persistencia políglota</strong>, construido de forma
-                        incremental para integrar múltiples estrategias de persistencia dentro de una
-                        misma arquitectura.
-                    </p>
-                    <p class="project-desc">
-                        El proyecto combina bases de datos relacionales, orientadas a documentos,
-                        grafos y caché, aplicadas sobre un dominio complejo modelado mediante una
-                        API REST y arquitectura multicapa.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Hibernate</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">Neo4j</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Redis</span>
-                        <span class="tag">JUnit</span>
-                    </div>
-                </div>
-                <a href="https://github.com/luciaviazzo/Bug-Busters-Academic-Project" class="project-arrow"
-                    target="_blank" rel="noopener noreferrer">→</a>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-num">03</div>
-                <div class="project-body">
-                    <div class="project-img">
-                        <img src="assets/images/sem.png" alt="SEM" />
-                    </div>
-                    <div class="project-subtitle">POO · Patrones de Diseño · TDD</div>
-                    <div class="project-name">Sistema de Estacionamiento Medido</div>
-                    <p class="project-desc">
-                        <strong>Backend para la gestión de estacionamientos en una localidad</strong>,
-                        desarrollado en equipo de 3 personas para optimizar el control del estacionamiento
-                        en la vía pública.
-                    </p>
-
-                    <p class="project-desc">
-                        Permite iniciar y finalizar estacionamientos en modo manual o automático,
-                        gestionar saldo, detectar movimiento del vehículo mediante sensores y generar
-                        infracciones. Aplica los patrones Observer, Strategy y State sobre un dominio
-                        modelado con POO y excepciones personalizadas.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">JUnit</span>
-                        <span class="tag">Mockito</span>
-                    </div>
-                </div>
-                <a href="https://github.com/luciaviazzo/sem-backend" class="project-arrow" target="_blank"
-                    rel="noopener noreferrer">→</a>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-num">04</div>
-                <div class="project-body">
-                    <div class="project-img">
-                        <img src="assets/images/concuColvolution.jpg" alt="ConcuConvolution" />
-                    </div>
-                    <div class="project-subtitle">Concurrencia · Benchmarking · Monitores</div>
-                    <div class="project-name">ConcuConvolution</div>
-                    <p class="project-desc">
-                        <strong>Sistema de procesamiento de imágenes</strong> desarrollado para
-                        comparar el rendimiento entre ejecuciones secuenciales y concurrentes
-                        mediante filtros convolucionales.
-                    </p>
-
-                    <p class="project-desc">
-                        El proyecto incluye configuración dinámica de workers y buffers,
-                        generación automática de benchmarks y análisis de resultados utilizando
-                        scripts de visualización de datos en Python.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Matplotlib</span>
-                    </div>
-                </div>
-                <a href="https://github.com/luciaviazzo/ConcuConvolution" class="project-arrow" target="_blank"
-                    rel="noopener noreferrer">→</a>
-            </div>
-
-            <!--
-            <div class="project-card reveal">
-                <div class="project-num">05</div>
-                <div class="project-body">
-                    <div class="project-img">
-                        <img src="assets/images/traits.png" alt="Traits en Ruby" />
-                    </div>
-                    <div class="project-subtitle">Metaprogramación · Diseño de lenguajes · OOP Avanzado</div>
-                    <div class="project-name">Traits en Ruby <span class="project-badge">En producción</span></div>
-                    <p class="project-desc">
-                        <strong>Extensión del lenguaje Ruby</strong> mediante metaprogramación para incorporar el patrón de diseño
-                        Traits, explorando composición de comportamiento en tiempo de ejecución.
-                    </p>
-
-                    <p class="project-desc">
-                        El proyecto se enfoca en el uso de metaprogramación en Ruby y en la comprensión de cómo
-                        pueden extenderse los lenguajes para modelar nuevos mecanismos de reutilización de código.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Ruby</span>
-                        <span class="tag">TDD</span>
-                        <span class="tag">UML</span>
-                    </div>
-                </div>
-            </div>
-            -->
+      </div>
+    </div>
+  </section>
+  <section id="proyectos">
+    <div class="section-tag" data-i18n="projects.sectionTag">Proyectos</div>
+    <h2 class="section-title" data-i18n-html="projects.title">Lo que<br /><em>construi</em></h2>
+    <div class="projects-carousel-wrap">
+      <button class="carousel-btn carousel-prev hidden" id="projPrev" aria-label="Anterior">&#8592;</button>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card reveal" onclick="openProjectModal('linkedunq')">
+          <div class="project-img"><img src="assets/images/linkedUNQ.jpg" alt="LinkedUNQ" /></div>
+          <div class="project-num">01 &mdash;</div>
+          <div class="project-name">LinkedUNQ</div>
+          <div class="project-subtitle" data-i18n="projects.items.linkedunq.sub">Full Stack · Scrum · NestJS · React</div>
+          <p class="project-desc" data-i18n="projects.items.linkedunq.desc">Plataforma web fullstack para conectar estudiantes con empresas en busqueda de su primer empleo en IT.</p>
+          <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">NestJS</span><span
+              class="tag">React</span><span class="tag">SQL</span><span class="tag">Jest</span></div>
         </div>
-    </section>
-
-    <section id="contacto">
-        <div class="contact-inner">
-            <div class="section-label">04 — Contacto</div>
-            <h2 class="contact-tagline reveal">Primera oportunidad<br /><em>en IT</em></h2>
-            <p class="contact-sub reveal">
-                Estoy en búsqueda de mi primera experiencia profesional en IT. Si hay un lugar donde pueda aprender,
-                contribuir y crecer, me interesa conocerlo.
-            </p>
-            <div class="contact-links reveal">
-                <a href="mailto:viazzo94@gmail.com" class="contact-link">
-                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                    Email
-                </a>
-                <a href="https://linkedin.com/in/luciaviazzo" target="_blank" class="contact-link">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/luciaviazzo" target="_blank" class="contact-link">
-                    <svg fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                    </svg>
-                    GitHub
-                </a>
-            </div>
+        <div class="project-card reveal" onclick="openProjectModal('epersaits')">
+          <div class="project-img"><img src="assets/images/bugBusters.png" alt="Epersgeist" /></div>
+          <div class="project-num">02 &mdash;</div>
+          <div class="project-name">Epersgeist</div>
+          <div class="project-subtitle" data-i18n="projects.items.epersaits.sub">Backend · Java · Spring Boot · Persistencia</div>
+          <p class="project-desc" data-i18n="projects.items.epersaits.desc">API REST en Java con distintas estrategias de persistencia - relacional, grafos, documentos y cache en un mismo sistema.</p>
+          <div class="project-tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span
+              class="tag">Neo4j</span><span class="tag">MongoDB</span><span class="tag">Redis</span></div>
         </div>
-    </section>
+        <div class="project-card reveal" onclick="openProjectModal('sem')">
+          <div class="project-img"><img src="assets/images/sem.png" alt="SEM" /></div>
+          <div class="project-num">03 &mdash;</div>
+          <div class="project-name">Sistema de Estacionamiento Medido</div>
+          <div class="project-subtitle" data-i18n="projects.items.sem.sub">POO · Patrones de Diseno · TDD</div>
+          <p class="project-desc" data-i18n="projects.items.sem.desc">Backend para la gestion de estacionamientos en una localidad, con patrones Observer, Strategy y State.</p>
+          <div class="project-tags"><span class="tag">Java</span><span class="tag">JUnit</span><span
+              class="tag">Mockito</span></div>
+        </div>
+        <div class="project-card reveal" onclick="openProjectModal('procesamiento')">
+          <div class="project-img"><img src="assets/images/concuColvolution.jpg" alt="ConcuConvolution" /></div>
+          <div class="project-num">04 &mdash;</div>
+          <div class="project-name">ConcuConvolution</div>
+          <div class="project-subtitle" data-i18n="projects.items.procesamiento.sub">Backend · Concurrencia · Python</div>
+          <p class="project-desc" data-i18n="projects.items.procesamiento.desc">Sistema para procesamiento de imagenes con filtros convolucionales que compara modelos secuenciales y concurrentes.</p>
+          <div class="project-tags"><span class="tag">Java</span><span class="tag">Python</span><span
+              class="tag">Concurrencia</span><span class="tag">Visualizacion</span></div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-next" id="projNext" aria-label="Siguiente">&#8594;</button>
+    </div>
+  </section>
+  <section id="stack">
+    <div class="section-tag" data-i18n="stack.sectionTag">Stack tecnologico</div>
+    <h2 class="section-title" data-i18n-html="stack.title">Las herramientas<br /><em>con las que construyo</em></h2>
+    <div class="stack-grid-icons reveal">
+      <div class="stack-card-icons">
+        <div class="stack-cat" data-i18n="stack.categories.backend">Backend</div>
+        <div class="stack-icons-list">
+          <div class="stack-icon-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="stack-icon-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="stack-icon-item"><i class="devicon-nestjs-plain colored"></i><span>NestJS</span></div>
+          <div class="stack-icon-item"><i class="devicon-ruby-plain colored"></i><span>Ruby</span></div>
+          <div class="stack-icon-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="stack-icon-item"><i class="devicon-spring-plain colored"></i><span>Spring</span></div>
+        </div>
+      </div>
+      <div class="stack-card-icons">
+        <div class="stack-cat" data-i18n="stack.categories.frontend">Frontend</div>
+        <div class="stack-icons-list">
+          <div class="stack-icon-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="stack-icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="stack-icon-item"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+          <div class="stack-icon-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="stack-icon-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+        </div>
+      </div>
+      <div class="stack-card-icons">
+        <div class="stack-cat" data-i18n="stack.categories.databases">Bases de datos</div>
+        <div class="stack-icons-list">
+          <div class="stack-icon-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+          <div class="stack-icon-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+          <div class="stack-icon-item"><i class="devicon-neo4j-plain colored"></i><span>Neo4j</span></div>
+          <div class="stack-icon-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+        </div>
+      </div>
+      <div class="stack-card-icons">
+        <div class="stack-cat" data-i18n="stack.categories.tools">Herramientas</div>
+        <div class="stack-icons-list">
+          <div class="stack-icon-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="stack-icon-item"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+          <div class="stack-icon-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="stack-icon-item"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+          <div class="stack-icon-item"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="recorrido">
+    <div class="section-tag" data-i18n="journey.sectionTag">Mi recorrido</div>
+    <h2 class="section-title" data-i18n-html="journey.title">Como llegue<br /><em>hasta aca</em></h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2026 &mdash; Actualidad</div>
+        <div class="timeline-title">Tecnicatura en Ciencia de Datos e IA</div>
+        <div class="timeline-sub">IFTS 24 · Cisco</div>
+        <div class="timeline-desc">Formacion en analisis de datos, machine learning e inteligencia artificial.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-title">Desarrollo Web Full Stack</div>
+        <div class="timeline-sub">Fundacion Pescar</div>
+        <div class="timeline-desc">300 horas de formacion en desarrollo web y habilidades interpersonales.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-title">LinkedUNQ · Epersgeist · ConcuConvolution · SEM</div>
+        <div class="timeline-sub">Proyectos academicos - UNQ</div>
+        <div class="timeline-desc">Desarrollo de proyectos que cubren fullstack, persistencia distribuida, concurrencia
+          y patrones de diseno.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2022 &mdash; Actualidad</div>
+        <div class="timeline-title">Licenciatura en Informatica</div>
+        <div class="timeline-sub">Universidad Nacional de Quilmes · Promedio 9.0</div>
+        <div class="timeline-desc">Carrera en curso con avance del 50.8%. Formacion solida en algoritmos, estructuras de
+          datos, sistemas y paradigmas.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2022 &mdash; 2025</div>
+        <div class="timeline-title">Tecnicatura en Programacion Informatica</div>
+        <div class="timeline-sub">Universidad Nacional de Quilmes · Promedio 9.0</div>
+        <div class="timeline-desc">Base tecnica en backend, bases de datos y metodologias agiles.</div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto">
+    <div class="contact-inner">
+      <div class="section-tag section-tag--center" data-i18n="contact.sectionTag">Contacto</div>
+      <h2 class="contact-tagline reveal" data-i18n-html="contact.tagline">Hablamos?<br /><em>Estoy disponible</em></h2>
+      <p class="contact-sub reveal" data-i18n="contact.sub">Estoy buscando mi primera oportunidad en IT. Si hay un lugar donde pueda aprender, contribuir y crecer, me interesa conocerlo.</p>
+      <div class="contact-links reveal">
+        <a href="mailto:viazzo94@gmail.com" class="contact-link">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+          <span data-i18n="contact.links.email">Email</span>
+        </a>
+        <a href="https://linkedin.com/in/lucia-viazzo" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          <span data-i18n="contact.links.linkedin">LinkedIn</span>
+        </a>
+        <a href="https://github.com/luciaviazzo" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
+          <span data-i18n="contact.links.github">GitHub</span>
+        </a>
+        <a href="https://drive.google.com/file/d/16HG1bLRiZUEOXHiC8XaxcQBFrcjrPx_B/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" class="contact-link">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+          </svg>
+          <span data-i18n="contact.links.cv">CV</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p data-i18n="footer.copy">&copy; 2025 Lucia Viazzo</p>
+    <p data-i18n="footer.tagline">Diseñado con intencion · Construido con codigo</p>
+  </footer>
+  <div class="project-modal-overlay" id="projectModal">
+    <div class="project-modal" id="modalContent">
+      <button class="modal-close-btn" onclick="closeProjectModal()">&#10005;</button>
+      <div class="carousel">
+        <div class="carousel-slides" id="carouselSlides"></div>
+        <button class="carousel-btn prev" onclick="prevSlide()">&#8249;</button>
+        <button class="carousel-btn next" onclick="nextSlide()">&#8250;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <div class="modal-content">
+        <div class="modal-project-num" id="modalNum"></div>
+        <div class="modal-project-name" id="modalName"></div>
+        <div class="modal-project-sub" id="modalSub"></div>
+        <hr class="modal-divider" />
+        <div class="modal-section-title" id="modalDescTitle">Descripcion</div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-section-title" id="modalFeatTitle">Funcionalidades</div>
+        <ul class="modal-features" id="modalFeatures"></ul>
+        <hr class="modal-divider" />
+        <div class="modal-section-title" id="modalStackTitle">Stack</div>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script>
+    const projects = {
+      linkedunq: { num: "01 -", name: "LinkedUNQ", sub: "Full Stack · Scrum · NestJS · React", desc: "Plataforma web fullstack para conectar estudiantes con empresas en busqueda de su primer empleo en IT. Desarrollada en equipo con metodologias agiles.", features: ["Registro y autenticacion de estudiantes y empresas", "Publicacion y busqueda de ofertas laborales", "APIs REST modulares con NestJS y TypeScript", "Interfaz responsive con React, Vite y Tailwind CSS", "Tests automatizados con Jest y trabajo en equipo con Scrum"], tags: ["JavaScript", "NestJS", "React", "Vite", "Tailwind CSS", "SQL", "Prisma", "Jest"], demo: "https://linked-unq.vercel.app/", repo: "https://github.com/luciaviazzo" },
+      epersaits: { num: "02 -", name: "Epersgeist", sub: "Backend · Java · Spring Boot · Persistencia", desc: "Sistema backend de persistencia poliglota, construido de forma incremental para integrar multiples estrategias de persistencia dentro de una misma arquitectura.", features: ["API REST con Java y Spring Boot", "Persistencia relacional con PostgreSQL y JPA/Hibernate", "Base de datos de grafos con Neo4j", "Base de datos documental con MongoDB", "Cache con Redis y tests unitarios con JUnit 5"], tags: ["Java", "Spring Boot", "PostgreSQL", "Neo4j", "MongoDB", "Redis", "JUnit"], demo: null, repo: "https://github.com/luciaviazzo/Bug-Busters-Academic-Project" },
+      sem: { num: "03 -", name: "Sistema de Estacionamiento Medido", sub: "POO · Patrones de Diseno · TDD", desc: "Backend para la gestion de estacionamientos en una localidad, desarrollado para optimizar el control del estacionamiento en la via publica.", features: ["Inicio y finalizacion de estacionamientos manual o automatico", "Gestion de saldo y deteccion de movimiento mediante sensores", "Generacion de infracciones automatizada", "Patrones Observer, Strategy y State", "Desarrollo orientado a pruebas con JUnit y Mockito"], tags: ["Java", "JUnit", "Mockito"], demo: null, repo: "https://github.com/luciaviazzo/sem-backend" },
+      procesamiento: { num: "04 -", name: "ConcuConvolution", sub: "Backend · Concurrencia · Python", desc: "Sistema para procesamiento de imagenes con filtros convolucionales que compara el rendimiento entre modelos secuenciales y concurrentes.", features: ["Aplicacion de filtros convolucionales sobre imagenes", "Implementacion de modelo secuencial y concurrente", "Configuracion flexible de workers, buffer y kernel", "Generacion automatica de graficos comparativos con Python", "Analisis de rendimiento entre ambos enfoques"], tags: ["Java", "Python", "Concurrencia", "Visualizacion"], demo: null, repo: "https://github.com/luciaviazzo" }
+    };
+    // ── i18n ──────────────────────────────────────────────────
+    let currentLang = localStorage.getItem('lang') || 'es';
 
-    <footer>
-        <p>© 2026 Lucía Viazzo</p>
-        <p>Diseñado con intención · Construido con código</p>
-    </footer>
+    function getKey(obj, path) {
+      return path.split('.').reduce((o, k) => o && o[k], obj);
+    }
 
-    <script src="js/main.js" defer></script>
+    function applyTranslations(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = t.lang;
+      document.title = t.pageTitle;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const val = getKey(t, el.dataset.i18n);
+        if (val !== undefined) el.textContent = val;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const val = getKey(t, el.dataset.i18nHtml);
+        if (val !== undefined) el.innerHTML = val;
+      });
+
+      // About list items
+      document.querySelectorAll('.about-list li').forEach((li, i) => {
+        if (t.about.items[i] !== undefined) li.innerHTML = t.about.items[i];
+      });
+
+      // Value cards
+      document.querySelectorAll('.value-card').forEach((card, i) => {
+        const v = t.about.values[i]; if (!v) return;
+        card.querySelector('.value-title').textContent = v.title;
+        card.querySelector('.value-desc').textContent = v.desc;
+      });
+
+      // Timeline
+      document.querySelectorAll('.timeline-item').forEach((item, i) => {
+        const ti = t.journey.items[i]; if (!ti) return;
+        item.querySelector('.timeline-date').textContent = ti.date;
+        item.querySelector('.timeline-title').textContent = ti.title;
+        item.querySelector('.timeline-sub').textContent = ti.sub;
+        item.querySelector('.timeline-desc').textContent = ti.desc;
+      });
+
+      // Modal static labels
+      const dEl = document.getElementById('modalDescTitle');
+      const fEl = document.getElementById('modalFeatTitle');
+      const sEl = document.getElementById('modalStackTitle');
+      if (dEl) dEl.textContent = t.projects.modal.sectionDesc;
+      if (fEl) fEl.textContent = t.projects.modal.sectionFeatures;
+      if (sEl) sEl.textContent = t.projects.modal.sectionStack;
+
+      // Lang toggle label: show the OTHER language
+      document.getElementById('langToggle').textContent = lang === 'es' ? 'EN' : 'ES';
+    }
+
+    applyTranslations(currentLang);
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('lang', currentLang);
+      applyTranslations(currentLang);
+    });
+    // ─────────────────────────────────────────────────────────────
+
+    let currentSlide = 0;
+    const totalSlides = 3;
+    function openProjectModal(key) {
+      const p = projects[key];
+      if (!p) return;
+      document.getElementById("modalNum").textContent = p.num;
+      document.getElementById("modalName").textContent = p.name;
+      const tp = translations[currentLang].projects.items[key];
+      document.getElementById("modalSub").textContent = tp ? tp.sub : p.sub;
+      document.getElementById("modalDesc").textContent = tp ? tp.descFull : p.desc;
+      const features = (tp && tp.features) ? tp.features : p.features;
+      document.getElementById("modalFeatures").innerHTML = features.map(f => "<li>" + f + "</li>").join("");
+      document.getElementById("modalTags").innerHTML = p.tags.map(t => '<span class="tag">' + t + "</span>").join("");
+      const actions = document.getElementById("modalActions");
+      actions.innerHTML = "";
+      const mt = translations[currentLang].projects.modal;
+      if (p.demo) actions.innerHTML += '<a href="' + p.demo + '" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-primary">' + mt.btnDemo + '</a>';
+      if (p.repo) actions.innerHTML += '<a href="' + p.repo + '" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-ghost">' + mt.btnRepo + '</a>';
+      const slides = document.getElementById("carouselSlides");
+      const slideLabel = translations[currentLang].projects.modal.slideLabel;
+      slides.innerHTML = Array.from({ length: totalSlides }, (_, i) => '<div class="carousel-slide"><span>' + slideLabel + ' ' + (i + 1) + "</span></div>").join("");
+      currentSlide = 0;
+      updateCarousel();
+      document.getElementById("projectModal").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeProjectModal() { document.getElementById("projectModal").classList.remove("open"); document.body.style.overflow = ""; }
+    document.getElementById("projectModal").addEventListener("click", function (e) { if (e.target === this) closeProjectModal(); });
+    function updateCarousel() {
+      document.getElementById("carouselSlides").style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+      document.getElementById("carouselDots").innerHTML = Array.from({ length: totalSlides }, (_, i) => '<div class="carousel-dot' + (i === currentSlide ? " active" : "") + '" onclick="goToSlide(' + i + ')"></div>').join("");
+    }
+    function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }
+    function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateCarousel(); }
+    function goToSlide(i) { currentSlide = i; updateCarousel(); }
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+    const navOverlay = document.getElementById("navOverlay");
+    function toggleMenu() { hamburger.classList.toggle("open"); navMenu.classList.toggle("open"); navOverlay.classList.toggle("open"); document.body.style.overflow = navMenu.classList.contains("open") ? "hidden" : ""; }
+    function closeMenu() { hamburger.classList.remove("open"); navMenu.classList.remove("open"); navOverlay.classList.remove("open"); document.body.style.overflow = ""; }
+    hamburger.addEventListener("click", toggleMenu);
+    navOverlay.addEventListener("click", closeMenu);
+    navMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    // Projects carousel
+    const projGrid = document.getElementById("projectsGrid");
+    const projPrev = document.getElementById("projPrev");
+    const projNext = document.getElementById("projNext");
+    function getCardWidth() { const card = projGrid.querySelector(".project-card"); return card ? card.offsetWidth + 24 : 0; }
+    function updateCarouselBtns() { projPrev.classList.toggle("hidden", projGrid.scrollLeft <= 0); projNext.classList.toggle("hidden", projGrid.scrollLeft + projGrid.offsetWidth >= projGrid.scrollWidth - 2); }
+    projPrev.addEventListener("click", () => { projGrid.scrollBy({ left: -getCardWidth(), behavior: "smooth" }); setTimeout(updateCarouselBtns, 350); });
+    projNext.addEventListener("click", () => { projGrid.scrollBy({ left: getCardWidth(), behavior: "smooth" }); setTimeout(updateCarouselBtns, 350); });
+    projGrid.addEventListener("scroll", updateCarouselBtns);
+    window.addEventListener("resize", updateCarouselBtns);
+    updateCarouselBtns();
+    const themeSwitch = document.getElementById("themeToggleSwitch");
+    const saved = localStorage.getItem("theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+    themeSwitch.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => { entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add("visible"), i * 80); }); }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 
 </html>

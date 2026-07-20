@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-lucia-viazzo",
+  "version": "1.0.0",
+  "description": "Sitio estatico en HTML, CSS y JavaScript",
+  "private": true,
+  "scripts": {
+    "dev": "serve -l 5500 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}
