@@ -1,38 +1,12 @@
-# Portfolio Lucia Viazzo
+# Portfolio Lucía Viazzo
 
-Sitio estatico en HTML, CSS y JavaScript.
+React + TypeScript + Vite.
 
-## Estructura
+## Comandos
 
-- index.html
-- css/
-  - styles.css
-- js/
-  - main.js
-- assets/
-  - cv.pdf
-
-## Como levantar
-
-Opcion simple: abrir index.html en el navegador.
-
-Opcion recomendada (servidor local):
-
-```powershell
-npm install
-npm run dev
+```bash
+npm install      # instalar dependencias
+npm run dev      # servidor de desarrollo en http://localhost:5500
+npm run build    # typecheck + build de producción en dist/
+npm run preview  # servir el build localmente
 ```
-
-Luego abrir:
-
-http://localhost:5500
-
-Alternativa sin Node:
-
-```powershell
-python -m http.server 8000
-```
-
-Luego abrir:
-
-http://localhost:8000/index.html
