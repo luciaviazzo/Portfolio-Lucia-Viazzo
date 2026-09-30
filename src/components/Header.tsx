@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { links, navItems } from '../data/content';
+import { links, navIds } from '../data/content';
 import { useActiveSection } from '../hooks';
+import { useI18n } from '../i18n';
 import { Icon } from './Icon';
 
-const ids = navItems.map((n) => n.id);
-
 export function Header() {
-  const active = useActiveSection(ids);
+  const { t, toggle } = useI18n();
+  const active = useActiveSection(navIds);
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
@@ -45,17 +45,17 @@ export function Header() {
   return (
     <header className="site-header" ref={headerRef}>
       <div className="container header-inner">
-        <a className="brand" href="#inicio" aria-label="Lucia, ir al inicio">
+        <a className="brand" href="#inicio" aria-label={t.header.homeAria}>
           <span className="brand-mark"><Icon name="code" /></span>
           <span className="brand-name">Lucia</span>
         </a>
 
-        <nav ref={navRef} className={open ? 'nav is-open' : 'nav'} id="menu-principal" aria-label="Principal">
+        <nav ref={navRef} className={open ? 'nav is-open' : 'nav'} id="menu-principal" aria-label={t.header.navAria}>
           <ul>
-            {navItems.map(({ id, label }) => (
+            {navIds.map((id) => (
               <li key={id}>
                 <a href={`#${id}`} aria-current={active === id ? 'true' : undefined} onClick={() => setOpen(false)}>
-                  {label}
+                  {t.header.nav[id]}
                 </a>
               </li>
             ))}
@@ -63,12 +63,21 @@ export function Header() {
         </nav>
 
         <div className="header-actions">
+          <button
+            className="icon-btn header-gh lang-btn"
+            type="button"
+            onClick={toggle}
+            lang={t.header.switchLangCode}
+            aria-label={t.header.switchLangAria}
+          >
+            {t.header.switchLangShort}
+          </button>
           <a
             className="icon-btn header-gh"
             href={links.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub (se abre en una pestaña nueva)"
+            aria-label={t.header.githubAria}
           >
             <Icon name="github" />
           </a>
@@ -76,7 +85,7 @@ export function Header() {
             ref={burgerRef}
             className="icon-btn header-gh burger"
             type="button"
-            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={open ? t.header.closeMenu : t.header.openMenu}
             aria-expanded={open}
             aria-controls="menu-principal"
             onClick={() => setOpen((v) => !v)}

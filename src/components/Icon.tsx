@@ -50,6 +50,12 @@ const paths = {
       <path d="M14 3v5h5M9 13h6M9 17h6" {...stroke} />
     </>
   ),
+  user: (
+    <>
+      <circle cx="12" cy="8" r="4" {...stroke} />
+      <path d="M4 21a8 8 0 0 1 16 0" {...stroke} />
+    </>
+  ),
   arrow: <path d="m9 6 6 6-6 6" {...stroke} />,
   chip: (
     <>

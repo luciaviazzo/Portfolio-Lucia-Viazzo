@@ -1,40 +1,34 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { projects, type Project } from '../data/content';
+import { useI18n } from '../i18n';
+import type { Dict } from '../i18n/es';
 import { Icon } from './Icon';
 
-const sqlRows = [
-  { name: 'Remera lisa', value: 240 },
-  { name: 'Taza', value: 198 },
-  { name: 'Mochila', value: 171 },
-  { name: 'Botella', value: 133 },
-  { name: 'Gorra', value: 96 },
-];
+const rowValues = [240, 198, 171, 133, 96];
 
-function QueryPreview() {
-  const max = sqlRows[0].value;
+function QueryPreview({ t }: { t: Dict }) {
+  const d = t.modal.demoPreview;
+  const max = rowValues[0];
   return (
     <div className="demo">
       <div className="demo-bar">
         <span className="demo-dots"><i /><i /><i /></span>
-        <span className="demo-url">consultas.app</span>
+        <span className="demo-url">{d.url}</span>
       </div>
       <div className="demo-body">
-        <p className="demo-question">¿Cuáles fueron los 5 productos más vendidos en agosto?</p>
-        <p className="demo-label">SQL generado</p>
-        <pre className="demo-sql">{`SELECT p.nombre, SUM(v.cantidad) AS total
-FROM ventas v JOIN productos p ON p.id = v.producto_id
-WHERE v.fecha BETWEEN '2026-08-01' AND '2026-08-31'
-GROUP BY p.nombre ORDER BY total DESC LIMIT 5;`}</pre>
+        <p className="demo-question">{d.question}</p>
+        <p className="demo-label">{d.sqlLabel}</p>
+        <pre className="demo-sql">{d.sql}</pre>
         <ul className="demo-rows">
-          {sqlRows.map(({ name, value }) => (
+          {d.rows.map((name, i) => (
             <li key={name}>
               <span>{name}</span>
-              <span className="demo-track"><span style={{ width: `${(value / max) * 100}%` }} /></span>
-              <b>{value}</b>
+              <span className="demo-track"><span style={{ width: `${(rowValues[i] / max) * 100}%` }} /></span>
+              <b>{rowValues[i]}</b>
             </li>
           ))}
         </ul>
-        <p className="demo-input">Preguntá algo sobre tus datos…</p>
+        <p className="demo-input">{d.input}</p>
       </div>
     </div>
   );
@@ -67,29 +61,36 @@ function GenericPreview({ variant }: { variant: 'main' | 'list' | 'chart' }) {
 
 interface Slide {
   node: ReactNode;
+  /** Ruta de la captura real; se usa además como fondo difuminado del marco. */
+  photo?: string;
   label: string;
   illustrative: boolean;
 }
 
-function buildSlides(project: Project): Slide[] {
+function buildSlides(project: Project, t: Dict, lang: 'es' | 'en'): Slide[] {
+  const c = t.modal.carousel;
   const illustrations: Slide[] = [
     {
-      node: project.preview === 'query' ? <QueryPreview /> : <GenericPreview variant="main" />,
-      label: 'Pantalla principal',
+      node: project.preview === 'query' ? <QueryPreview t={t} /> : <GenericPreview variant="main" />,
+      label: c.slideMain,
       illustrative: true,
     },
-    { node: <GenericPreview variant="list" />, label: 'Listado', illustrative: true },
-    { node: <GenericPreview variant="chart" />, label: 'Gráficos', illustrative: true },
+    { node: <GenericPreview variant="list" />, label: c.slideList, illustrative: true },
+    { node: <GenericPreview variant="chart" />, label: c.slideChart, illustrative: true },
   ];
   const photos: Slide[] = (project.images ?? []).map((img) => ({
-    node: <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />,
-    label: img.alt,
+    node: <img src={img.src} alt={img.alt[lang]} loading="lazy" decoding="async" />,
+    label: img.alt[lang],
+    photo: img.src,
     illustrative: false,
   }));
-  return [...photos, ...illustrations];
+  // Con capturas reales no hacen falta las ilustraciones de relleno.
+  return photos.length > 0 ? photos : illustrations;
 }
 
 function Carousel({ slides }: { slides: Slide[] }) {
+  const { t } = useI18n();
+  const c = t.modal.carousel;
   const track = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
   const last = slides.length - 1;
@@ -102,7 +103,7 @@ function Carousel({ slides }: { slides: Slide[] }) {
   };
 
   return (
-    <div className="carousel" role="group" aria-roledescription="carrusel" aria-label="Imágenes del proyecto">
+    <div className="carousel" role="group" aria-roledescription={c.roleDescription} aria-label={c.label}>
       <div
         className="modal-preview"
         onKeyDown={(e) => {
@@ -121,29 +122,30 @@ function Carousel({ slides }: { slides: Slide[] }) {
         >
           {slides.map((s, i) => (
             <div
-              className="carousel-slide"
+              className={s.photo ? 'carousel-slide is-photo' : 'carousel-slide'}
+              style={s.photo ? ({ '--photo': `url(${s.photo})` } as CSSProperties) : undefined}
               key={i}
               role="group"
-              aria-roledescription="diapositiva"
-              aria-label={`${i + 1} de ${slides.length}: ${s.label}`}
+              aria-roledescription={c.slideRoleDescription}
+              aria-label={c.slideLabel(i + 1, slides.length, s.label)}
             >
               {s.node}
             </div>
           ))}
         </div>
-        <button className="car-btn prev" type="button" onClick={() => goTo(current - 1)} disabled={current === 0} aria-label="Imagen anterior">
+        <button className="car-btn prev" type="button" onClick={() => goTo(current - 1)} disabled={current === 0} aria-label={c.prev}>
           <span className="flip"><Icon name="arrow" /></span>
         </button>
-        <button className="car-btn next" type="button" onClick={() => goTo(current + 1)} disabled={current === last} aria-label="Imagen siguiente">
+        <button className="car-btn next" type="button" onClick={() => goTo(current + 1)} disabled={current === last} aria-label={c.next}>
           <Icon name="arrow" />
         </button>
       </div>
       <div className="carousel-dots">
         {slides.map((_, i) => (
-          <button key={i} type="button" onClick={() => goTo(i)} aria-label={`Ir a la imagen ${i + 1}`} aria-current={i === current ? 'true' : undefined} />
+          <button key={i} type="button" onClick={() => goTo(i)} aria-label={c.goTo(i + 1)} aria-current={i === current ? 'true' : undefined} />
         ))}
       </div>
-      {slides[current]?.illustrative && <p className="modal-caption">Vista ilustrativa con datos de ejemplo</p>}
+      {slides[current]?.illustrative && <p className="modal-caption">{c.caption}</p>}
     </div>
   );
 }
@@ -154,6 +156,7 @@ interface Props {
 }
 
 export function ProjectDialog({ index, onChange }: Props) {
+  const { t, lang } = useI18n();
   const ref = useRef<HTMLDialogElement>(null);
   const open = index !== null;
   const project = index === null ? null : projects[index];
@@ -173,6 +176,7 @@ export function ProjectDialog({ index, onChange }: Props) {
   const total = projects.length;
   const prev = index === null ? null : projects[(index - 1 + total) % total];
   const next = index === null ? null : projects[(index + 1) % total];
+  const m = t.modal;
 
   return (
     <dialog
@@ -185,11 +189,16 @@ export function ProjectDialog({ index, onChange }: Props) {
     >
       {project && index !== null && prev && next && (
         <div className="modal-panel">
-          <p className="sr-only" role="status">{`Proyecto ${index + 1} de ${total}: ${project.title}`}</p>
+          <p className="sr-only" role="status">{m.status(index + 1, total, t.projects.items[project.id].title)}</p>
           <div className="modal-head">
-            <p>{project.kind}</p>
+            <div className="modal-head-main">
+              <p>{t.projects.items[project.id].kind}</p>
+              <span className="status" data-status={project.status}>
+                <span className="sr-only">{t.projects.statusLabel}: </span>{t.projects.status[project.status]}
+              </span>
+            </div>
             <div className="modal-tools">
-              <button className="modal-btn modal-close" type="button" onClick={() => onChange(null)} aria-label="Cerrar">
+              <button className="modal-btn modal-close" type="button" onClick={() => onChange(null)} aria-label={m.close}>
                 <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
               </button>
             </div>
@@ -197,34 +206,37 @@ export function ProjectDialog({ index, onChange }: Props) {
 
           <div className="modal-content">
             <div className="modal-visual">
-              <Carousel key={index} slides={buildSlides(project)} />
+              <Carousel key={`${index}-${lang}`} slides={buildSlides(project, t, lang)} />
             </div>
 
             <div className="modal-info">
-              <h2 id="modal-title">{project.title}</h2>
-              <h3>De qué se trata</h3>
-              <p className="modal-about">{project.about}</p>
-              <h3>Lo que hace</h3>
+              <h2 id="modal-title">{t.projects.items[project.id].title}</h2>
+              {t.projects.items[project.id].keywords && (
+                <p className="modal-keywords">{t.projects.items[project.id].keywords?.join(' · ')}</p>
+              )}
+              <h3>{m.aboutTitle}</h3>
+              <p className="modal-about">{t.projects.items[project.id].about}</p>
+              <h3>{m.featuresTitle}</h3>
               <ul className="modal-features">
-                {project.features.map((f) => <li key={f}>{f}</li>)}
+                {t.projects.items[project.id].features.map((f) => <li key={f}>{f}</li>)}
               </ul>
-              <h3 className="modal-tech-title">Tecnologías</h3>
+              <h3 className="modal-tech-title">{m.techTitle}</h3>
               <ul className="chips">
-                {project.tags.map((t) => <li key={t}>{t}</li>)}
+                {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
               </ul>
               <div className="modal-actions">
-                <a className="more more-primary" href={project.demo ?? project.repo} target="_blank" rel="noopener noreferrer">Ver demo</a>
-                <a className="more" href={project.repo} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a className="more more-primary" href={project.demo ?? project.repo} target="_blank" rel="noopener noreferrer">{m.demo}</a>
+                <a className="more" href={project.repo} target="_blank" rel="noopener noreferrer">{m.github}</a>
               </div>
             </div>
           </div>
-          <nav className="modal-nav" aria-label="Otros proyectos">
+          <nav className="modal-nav" aria-label={m.otherProjects}>
             <button type="button" onClick={() => onChange((index - 1 + total) % total)}>
               <span className="chev flip"><Icon name="arrow" /></span>
-              <span><small>Anterior</small>{prev.title}</span>
+              <span><small>{m.previous}</small>{t.projects.items[prev.id].title}</span>
             </button>
             <button type="button" className="next" onClick={() => onChange((index + 1) % total)}>
-              <span><small>Siguiente</small>{next.title}</span>
+              <span><small>{m.next}</small>{t.projects.items[next.id].title}</span>
               <span className="chev"><Icon name="arrow" /></span>
             </button>
           </nav>

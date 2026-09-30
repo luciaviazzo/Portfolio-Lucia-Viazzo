@@ -1,16 +1,19 @@
 import type { CSSProperties } from 'react';
 import { techGroups } from '../data/content';
+import { useI18n } from '../i18n';
 import { Icon } from './Icon';
 
 export function Technologies() {
+  const { t } = useI18n();
+
   return (
     <section className="section light-zone" id="tecnologias" aria-labelledby="tech-title">
       <div className="container">
-        <h2 className="section-title" id="tech-title"><Icon name="code" />Tecnologías</h2>
+        <h2 className="section-title" id="tech-title"><Icon name="code" />{t.tech.title}</h2>
         <div className="tech-grid">
-          {techGroups.map(({ title, accent, items }) => (
-            <article className="tech-card" key={title} style={{ '--p': accent } as CSSProperties}>
-              <h3>{title}</h3>
+          {techGroups.map(({ id, accent, items }) => (
+            <article className="tech-card" key={id} style={{ '--p': accent } as CSSProperties}>
+              <h3>{t.tech.groups[id]}</h3>
               <ul className="tech-list">
                 {items.map(({ name, devicon, color, mono }) => (
                   <li key={name} style={color ? ({ '--brand': color } as CSSProperties) : undefined}>
@@ -19,7 +22,7 @@ export function Technologies() {
                     ) : (
                       <Icon name="chip" />
                     )}
-                    {name}
+                    {t.tech.names[name] ?? name}
                   </li>
                 ))}
               </ul>

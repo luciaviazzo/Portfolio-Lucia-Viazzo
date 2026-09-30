@@ -142,8 +142,8 @@ h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 500; line-height: 1.05;
 }
 
 /* ---------- Secciones ---------- */
-.section { padding-block: clamp(48px, 7vw, 80px); background: var(--bg-2); }
-#proyectos { background: var(--bg); }
+.section { padding-block: clamp(48px, 7vw, 80px); background: var(--bg); }
+#tecnologias { padding-bottom: clamp(72px, 10vw, 128px); }
 .section-title { display: flex; align-items: center; gap: 12px; font-size: clamp(1.5rem, 3vw, 1.75rem); font-weight: 500; }
 .section-title::after { content: none; }
 .section-title + .section-desc,
@@ -169,7 +169,9 @@ h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 500; line-height: 1.05;
   transition: transform .2s, box-shadow .2s, border-color .2s;
 }
 .project-link:hover { transform: translateY(-3px); border-color: var(--p); box-shadow: 0 10px 24px rgb(0 0 0 / .12); }
-.preview { background: color-mix(in srgb, var(--p) 18%, var(--tint-mix)); border-radius: 8px; padding: 18px 16px; }
+.preview { background: color-mix(in srgb, var(--p) 18%, var(--tint-mix)); border-radius: 8px; overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; padding: 0; }
+.preview .mock { width: calc(100% - 32px); }
+.preview-cover { display: block; width: 100%; height: 100%; object-fit: cover; }
 .mock { background: var(--bg-2); border: 1px solid var(--card-border); border-radius: 6px; padding: 14px 16px 20px; }
 .mock .dots { display: block; height: 6px; width: 30px; margin-bottom: 16px; background:
   radial-gradient(circle, var(--card-border) 2.5px, transparent 3px) 0 0 / 10px 6px; }
@@ -195,20 +197,20 @@ h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 500; line-height: 1.05;
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center;
   padding: clamp(28px, 5vw, 56px); border-radius: 14px; border: 1px solid var(--d-border); overflow: hidden;
 }
-.about h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); font-weight: 500; color: var(--coral); background: var(--coral-grad-x); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; width: fit-content; padding-bottom: 16px; position: relative; margin-bottom: 28px; }
-.about h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 56px; height: 3px; border-radius: 2px; background: var(--coral-grad-x); }
+.about h2 { display: flex; align-items: center; gap: 12px; font-size: clamp(1.5rem, 3vw, 1.75rem); font-weight: 500; color: var(--coral); background: var(--coral-grad-x); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; width: fit-content; padding-bottom: 18px; position: relative; margin-bottom: 28px; }
+.about h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 48px; height: 3px; border-radius: 2px; background: var(--coral-grad-x); }
 .about-text p { font-size: 1rem; line-height: 1.8; color: var(--d-text); }
 .about-text p + p { margin-top: 20px; }
 .about-text strong { color: var(--coral); font-weight: 600; }
 .facts { display: grid; gap: 18px; }
 .facts li {
-  display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+  display: flex; padding: 0;
   background: var(--d-surface); border: 1px solid var(--d-border); border-radius: 8px;
 }
 .facts li:nth-child(2) { margin-inline-start: 24px; }
 .fact-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 10px; background: var(--coral-grad); color: var(--d-bg); flex: none; }
-.facts h3 { font-size: 1.0625rem; font-weight: 500; color: var(--coral); }
-.facts p { margin-top: 2px; font-size: 0.875rem; color: var(--d-muted); line-height: 1.5; }
+.fact-title { display: block; font-size: 1.0625rem; font-weight: 500; color: var(--coral); }
+.fact-desc { display: block; margin-top: 2px; font-size: 0.875rem; color: var(--d-muted); line-height: 1.5; }
 
 /* ---------- Tecnologías ---------- */
 .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -225,12 +227,12 @@ h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 500; line-height: 1.05;
 .tech-list .icon { width: 1.25rem; height: 1.25rem; }
 
 /* ---------- Footer / contacto ---------- */
-.site-footer { padding-top: clamp(32px, 5vw, 48px); }
+.site-footer { padding-top: clamp(24px, 4vw, 36px); }
 .contact { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
 .contact .btn-row { justify-content: center; }
 .contact h2 { font-size: 1.125rem; font-weight: 500; }
 .contact p { margin: 8px auto 0; max-width: 48ch; font-size: 0.8125rem; color: var(--d-muted); }
-.copy { margin-top: clamp(40px, 8vw, 96px); padding-block: 20px; border-top: 1px solid var(--d-border); text-align: center; font-size: 0.6875rem; color: var(--d-muted); }
+.copy { margin-top: 24px; padding-block: 14px; border-top: 1px solid var(--d-border); text-align: center; font-size: 0.6875rem; color: var(--d-muted); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
@@ -268,26 +270,29 @@ body:has(dialog[open]) { overflow: hidden; }
   /* El propio dialog ocupa toda la pantalla y es el contenedor con scroll,
      así se puede desplazar con la rueda en cualquier punto, incluso sobre el fondo. */
   position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
-  margin: 0; padding: clamp(12px, 4vh, 40px) var(--gutter); overflow-y: auto; overscroll-behavior: contain;
+  margin: 0; padding: clamp(12px, 3vh, 32px) var(--gutter); overflow: hidden;
   color: var(--text); background: transparent; border: 0;
 }
 .modal-panel {
-  width: min(980px, 100%); margin: 0 auto; overflow: clip;
+  /* Tamaño fijo y sin scroll: todas las tarjetas miden lo mismo y el contenido está pensado para entrar. */
+  display: flex; flex-direction: column; flex: none;
+  width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow: hidden;
   background: var(--bg); border: 3px solid var(--p); border-radius: 20px;
   box-shadow: 0 0 0 10px color-mix(in srgb, var(--p) 22%, transparent), 0 24px 60px rgb(0 0 0 / .35);
 }
+.modal[open] { display: flex; align-items: center; }
 .modal::backdrop { background: rgb(28 32 38 / .72); }
 .modal[open] { animation: modal-in .2s ease-out; }
 @keyframes modal-in { from { opacity: 0; transform: translateY(8px); } }
 
 .modal-head {
-  position: sticky; top: 0; z-index: 1;
+  flex: none;
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--card-border);
 }
 .modal-head p { font-size: 1rem; font-weight: 500; color: var(--muted); }
 
-.modal-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: stretch; padding: 20px 24px 24px; }
+.modal-content { flex: 1; min-height: 0; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; }
 .modal-info { display: flex; flex-direction: column; }
 .modal-preview { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--p) 16%, var(--tint-mix)); }
 .carousel-track { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
@@ -377,7 +382,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .modal-btn:hover { border-color: var(--p); }
 .modal-btn .icon { width: 16px; height: 16px; }
 .modal-close { margin-left: 8px; }
-.modal-nav { display: flex; justify-content: space-between; gap: 16px; margin: 0 24px; padding: 14px 0 18px; border-top: 1px solid var(--card-border); }
+.modal-nav { flex: none; display: flex; justify-content: space-between; gap: 16px; margin: 0 24px; padding: 14px 0 18px; border-top: 1px solid var(--card-border); }
 .modal-nav button {
   display: flex; align-items: center; gap: 12px; padding: 8px 6px; cursor: pointer;
   font: 600 0.9375rem/1.35 var(--font); color: var(--text); background: none; border: 0; border-radius: 8px; text-align: left;
@@ -456,3 +461,84 @@ body:has(dialog[open]) { overflow: hidden; }
   [data-reveal] { opacity: 1 !important; translate: none !important; }
   .accent { -webkit-text-fill-color: transparent; }
 }
+
+/* Bloques de "Sobre mí" clicables */
+.fact-btn { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 22px; font: inherit; color: inherit; text-align: left; cursor: pointer; background: none; border: 0; border-radius: 8px; }
+.fact-text { flex: 1; }
+.fact-more { display: grid; color: var(--coral); transition: transform .2s; }
+.fact-more .icon { width: 18px; height: 18px; }
+.facts li:hover .fact-more, .fact-btn:focus-visible .fact-more { transform: translateX(4px); }
+.fact-btn:focus-visible { outline-offset: -3px; }
+
+/* Detalle de "Sobre mí" */
+.fact-modal {
+  --p: var(--coral);
+  --bg: var(--d-bg); --bg-2: var(--d-surface); --card-border: var(--d-border);
+  --text: var(--d-text); --muted: var(--d-muted); --tint-mix: var(--d-bg);
+  --link: var(--coral); --focus: var(--coral);
+}
+.fact-modal .modal-panel { width: min(560px, 100%); height: auto; }
+.fact-body { padding: 8px 28px 32px; }
+.fact-body h2 { margin: 16px 0 0; font-size: 1.625rem; font-weight: 500; color: var(--coral); }
+.fact-body .modal-about { margin: 10px 0 20px; font-size: 0.9375rem; }
+.fact-body .modal-features li { font-size: 0.9375rem; }
+.fact-icon-lg { width: 56px; height: 56px; border-radius: 14px; }
+.fact-icon-lg .icon { width: 26px; height: 26px; }
+
+/* Pantallas bajas: compactar para que todo entre sin scroll */
+@media (min-width: 761px) and (max-height: 820px) {
+  .modal-preview { height: clamp(280px, 50vh, 380px); }
+  .modal-content { padding: 14px 22px 16px; gap: 22px; }
+  .modal h2 { margin-bottom: 8px; }
+  .modal-about { margin-bottom: 10px; line-height: 1.55; }
+  .modal-features { gap: 5px; }
+  .modal-tech-title { margin-top: 12px; }
+  .modal-actions { margin-top: 14px; }
+  .modal-nav { padding: 6px 0 10px; }
+}
+/* En móvil el contenido no cabe en una sola pantalla: ahí sí se desplaza el interior de la tarjeta. */
+@media (max-width: 760px) {
+  .modal-panel { height: 100%; }
+  .modal-content { overflow-y: auto; overscroll-behavior: contain; }
+}
+
+/* Selector de idioma */
+.lang-btn { width: auto; min-width: 44px; padding: 0 12px; cursor: pointer; font: 600 0.8125rem/1 var(--font); letter-spacing: .04em; }
+
+/* El carrusel ocupa todo el alto disponible de la tarjeta (escritorio) */
+@media (min-width: 761px) {
+  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; }
+  .modal-visual { display: flex; min-height: 0; }
+  .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+  .modal-preview { flex: 1; height: auto; min-height: 0; }
+  .g-chart { height: min(260px, 60%); }
+}
+@media (min-width: 761px) {
+  .carousel-slide > .demo-generic { display: flex; flex-direction: column; height: 100%; }
+  .demo-generic .demo-body { flex: 1; align-content: center; }
+  .g-chart { height: 100%; min-height: 160px; }
+}
+
+/* Estado del proyecto */
+.status {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px;
+  font-size: 0.6875rem; font-weight: 600; line-height: 1.4; white-space: nowrap;
+  color: var(--text); background: var(--bg-2); border: 1px solid var(--card-border); border-radius: 999px;
+}
+.status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #E3A23A; }
+.status[data-status='completed']::before { background: #3E9B6B; }
+.project-link { position: relative; }
+.project-link > .status { position: absolute; top: 22px; right: 22px; z-index: 1; }
+.modal-head-main { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-width: 0; }
+
+/* Capturas reales en el carrusel */
+.carousel-slide > img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border: 1px solid var(--card-border); box-shadow: 0 8px 24px rgb(0 0 0 / .18); }
+.modal-keywords { margin: -6px 0 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: .02em; color: var(--link); }
+
+/* Las capturas se adaptan al marco: ocupan todo el ancho y el resto se rellena con la misma imagen difuminada */
+.carousel-slide.is-photo { position: relative; padding: 16px; overflow: hidden; }
+.carousel-slide.is-photo::before {
+  content: ''; position: absolute; inset: -24px; background: var(--photo) center / cover no-repeat;
+  filter: blur(34px) saturate(1.05); opacity: .35;
+}
+.carousel-slide.is-photo > img { position: relative; width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none; border: 0; border-radius: 0; box-shadow: 0 0 24px rgb(0 0 0 / .18); }
