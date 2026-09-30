@@ -53,20 +53,6 @@ export const es = {
     statusLabel: 'Estado',
     status: { completed: 'Terminado', inProgress: 'En desarrollo' },
     items: {
-      db: {
-        title: 'Preguntale a tu base de datos',
-        description:
-          'Escribís una pregunta en español y el sistema la convierte en SQL, la ejecuta y te muestra el resultado.',
-        kind: 'Proyecto personal',
-        about:
-          'Empezó como un dashboard de ventas y terminó siendo algo más flexible: en lugar de armar un gráfico para cada pregunta, cualquiera puede consultar la base de datos escribiendo lo que quiere saber.',
-        features: [
-          'Traduce la pregunta a SQL con Claude, orquestado con LangChain',
-          'Muestra el SQL generado junto al resultado, para poder revisarlo',
-          'Backend en NestJS con datos en PostgreSQL',
-          'Nació como Sales Dashboard y cambió de enfoque a mitad de camino',
-        ],
-      },
       voxa: {
         title: 'Voxa',
         description: 'App de finanzas personales para personas mayores que se maneja hablando.',
@@ -81,10 +67,10 @@ export const es = {
         ],
       },
       market: {
-        title: 'Mercado de jugadores de fútbol',
+        title: 'FULVAL',
         description:
           'Plataforma que calcula el valor de mercado de jugadores de las cinco grandes ligas y permite comprar y vender sus tokens.',
-        kind: 'Proyecto personal',
+        kind: 'Proyecto universitario',
         about:
           'Una plataforma que calcula el valor de mercado de jugadores de las cinco grandes ligas y permite comprar y vender tokens de cada uno.',
         features: [
@@ -97,19 +83,34 @@ export const es = {
       linkedunq: {
         title: 'LinkedUNQ',
         description: 'Plataforma de empleo para estudiantes de la UNQ que conecta perfiles junior con empresas del sector tecnológico.',
-        kind: 'Proyecto en equipo',
+        kind: 'Proyecto universitario',
         keywords: ['API REST', 'Gestión de roles', 'CRUD complejo', 'SCRUM'],
         about:
           'Plataforma de empleo para estudiantes de la UNQ, desarrollada en equipo bajo metodologías ágiles y enfocada en conectar perfiles junior con empresas del sector tecnológico.',
         features: [
           'Tres roles: estudiante, empresa y administrador',
           'Creación y validación de perfiles',
-          'Publicación de ofertas laborales',
+          'Publicación de ofertas laborales y gestión de postulantes',
           'Exploración de búsquedas y gestión de postulaciones',
         ],
       },
+      epersgeist: {
+        title: 'Epersgeist',
+        description: 'Sistema backend de persistencia políglota que integra múltiples estrategias de persistencia dentro de una misma arquitectura.',
+        kind: 'Proyecto universitario',
+        keywords: ['API REST', 'Arquitectura Multicapa', 'Persistencia Políglota'],
+        about:
+          'El proyecto combina bases de datos relacionales, orientadas a documentos, grafos y caché, aplicadas sobre un dominio complejo modelado mediante una API REST y arquitectura multicapa.',
+        features: [
+          'API REST con arquitectura multicapa',
+          'Persistencia relacional con Hibernate y SQL',
+          'Base de datos de grafos con Neo4j',
+          'Base de datos de documentos con MongoDB',
+          'Caché con Redis',
+        ],
+      },
       bike: {
-        title: 'Marketplace de bike tours',
+        title: 'Turia Bikes',
         description: 'Reservá tours en bici y alquilá bicicletas, empezando por Buenos Aires.',
         kind: 'Proyecto personal',
         about:
@@ -133,6 +134,8 @@ export const es = {
     previous: 'Anterior',
     next: 'Siguiente',
     otherProjects: 'Otros proyectos',
+    unavailableTitle: 'No disponible',
+    unavailable: 'Este enlace todavía no está disponible.',
     status: (n: number, total: number, title: string) => `Proyecto ${n} de ${total}: ${title}`,
     carousel: {
       label: 'Imágenes del proyecto',

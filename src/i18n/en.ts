@@ -42,20 +42,6 @@ export const en: Dict = {
     statusLabel: 'Status',
     status: { completed: 'Completed', inProgress: 'In progress' },
     items: {
-      db: {
-        title: 'Ask your database',
-        description:
-          'You write a question in natural language and the system turns it into SQL, runs it and shows you the result.',
-        kind: 'Personal project',
-        about:
-          'It started as a sales dashboard and ended up more flexible: instead of building a chart for every question, anyone can query the database by writing what they want to know.',
-        features: [
-          'Translates the question into SQL with Claude, orchestrated with LangChain',
-          'Shows the generated SQL next to the result, so it can be reviewed',
-          'NestJS backend with data in PostgreSQL',
-          'Started as Sales Dashboard and changed direction halfway through',
-        ],
-      },
       voxa: {
         title: 'Voxa',
         description: 'Personal finance app for older adults, controlled by voice.',
@@ -70,10 +56,10 @@ export const en: Dict = {
         ],
       },
       market: {
-        title: 'Football player market',
+        title: 'FULVAL',
         description:
           'Platform that calculates the market value of players from the top five leagues and lets you buy and sell their tokens.',
-        kind: 'Personal project',
+        kind: 'University project',
         about:
           'A platform that calculates the market value of players from the top five leagues and lets you buy and sell tokens for each one.',
         features: [
@@ -86,19 +72,34 @@ export const en: Dict = {
       linkedunq: {
         title: 'LinkedUNQ',
         description: 'Job platform for UNQ students that connects junior profiles with companies in the tech sector.',
-        kind: 'Team project',
+        kind: 'University project',
         keywords: ['REST API', 'Role management', 'Complex CRUD', 'SCRUM'],
         about:
           'A job platform for UNQ students, built as a team using agile methodologies and focused on connecting junior profiles with companies in the tech sector.',
         features: [
           'Three roles: student, company and administrator',
           'Profile creation and validation',
-          'Job offer publishing',
+          'Job offer publishing and applicant management',
           'Job search browsing and application management',
         ],
       },
+      epersgeist: {
+        title: 'Epersgeist',
+        description: 'Polyglot persistence backend system that integrates multiple persistence strategies within a single architecture.',
+        kind: 'University project',
+        keywords: ['REST API', 'Multilayer Architecture', 'Polyglot Persistence'],
+        about:
+          'The project combines relational, document-oriented, graph and cache databases, applied to a complex domain modelled through a REST API and multilayer architecture.',
+        features: [
+          'REST API with multilayer architecture',
+          'Relational persistence with Hibernate and SQL',
+          'Graph database with Neo4j',
+          'Document database with MongoDB',
+          'Cache with Redis',
+        ],
+      },
       bike: {
-        title: 'Bike tours marketplace',
+        title: 'Turia Bikes',
         description: 'Book bike tours and rent bikes, starting in Buenos Aires.',
         kind: 'Personal project',
         about:
@@ -122,6 +123,8 @@ export const en: Dict = {
     previous: 'Previous',
     next: 'Next',
     otherProjects: 'Other projects',
+    unavailableTitle: 'Not available',
+    unavailable: 'This link is not available yet.',
     status: (n: number, total: number, title: string) => `Project ${n} of ${total}: ${title}`,
     carousel: {
       label: 'Project images',

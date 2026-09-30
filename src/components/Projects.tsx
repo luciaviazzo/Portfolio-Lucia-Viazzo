@@ -4,7 +4,7 @@ import { useI18n } from '../i18n';
 import { Icon } from './Icon';
 import { ProjectDialog } from './ProjectDialog';
 
-function ProjectCard({ id, status, tags, accent, wide, cover, onOpen }: Project & { onOpen: () => void }) {
+function ProjectCard({ id, status, tags, accent, wide, cover, year, onOpen }: Project & { onOpen: () => void }) {
   const { t } = useI18n();
   const text = t.projects.items[id];
 
@@ -21,7 +21,7 @@ function ProjectCard({ id, status, tags, accent, wide, cover, onOpen }: Project 
         <div className="project-body">
           <h3>{text.title}</h3>
           <p>{text.description}</p>
-          <ul className="tags">{tags.slice(0, 4).map((tag) => <li key={tag}>{tag}</li>)}</ul>
+          <ul className="tags">{tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
           <span className="more">{t.projects.viewProject}<Icon name="arrow" /></span>
         </div>
       </button>

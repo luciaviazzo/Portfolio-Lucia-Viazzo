@@ -133,12 +133,6 @@ function Carousel({ slides }: { slides: Slide[] }) {
             </div>
           ))}
         </div>
-        <button className="car-btn prev" type="button" onClick={() => goTo(current - 1)} disabled={current === 0} aria-label={c.prev}>
-          <span className="flip"><Icon name="arrow" /></span>
-        </button>
-        <button className="car-btn next" type="button" onClick={() => goTo(current + 1)} disabled={current === last} aria-label={c.next}>
-          <Icon name="arrow" />
-        </button>
       </div>
       <div className="carousel-dots">
         {slides.map((_, i) => (
@@ -192,7 +186,7 @@ export function ProjectDialog({ index, onChange }: Props) {
           <p className="sr-only" role="status">{m.status(index + 1, total, t.projects.items[project.id].title)}</p>
           <div className="modal-head">
             <div className="modal-head-main">
-              <p>{t.projects.items[project.id].kind}</p>
+              <p>{t.projects.items[project.id].kind}{project.year && <span className="modal-year">{project.year}</span>}</p>
               <span className="status" data-status={project.status}>
                 <span className="sr-only">{t.projects.statusLabel}: </span>{t.projects.status[project.status]}
               </span>
@@ -224,10 +218,12 @@ export function ProjectDialog({ index, onChange }: Props) {
               <ul className="chips">
                 {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
               </ul>
-              <div className="modal-actions">
-                <a className="more more-primary" href={project.demo ?? project.repo} target="_blank" rel="noopener noreferrer">{m.demo}</a>
-                <a className="more" href={project.repo} target="_blank" rel="noopener noreferrer">{m.github}</a>
-              </div>
+              {(project.demo ?? project.repo) && (
+                <div className="modal-actions">
+                  {project.demo && <a className="more more-primary" href={project.demo} target="_blank" rel="noopener noreferrer">{m.demo}</a>}
+                  {project.repo && <a className={`more${!project.demo ? ' more-primary' : ''}`} href={project.repo} target="_blank" rel="noopener noreferrer">{m.github}</a>}
+                </div>
+              )}
             </div>
           </div>
           <nav className="modal-nav" aria-label={m.otherProjects}>

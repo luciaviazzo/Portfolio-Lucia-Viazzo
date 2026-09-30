@@ -13,7 +13,7 @@ export const links = {
 export const navIds = ['inicio', 'proyectos', 'sobre-mi', 'tecnologias', 'contacto'] as const;
 export type NavId = (typeof navIds)[number];
 
-export type ProjectId = 'db' | 'voxa' | 'market' | 'linkedunq' | 'bike';
+export type ProjectId = 'voxa' | 'market' | 'linkedunq' | 'epersgeist' | 'bike';
 
 export type ProjectStatus = 'completed' | 'inProgress';
 
@@ -22,14 +22,16 @@ export interface Project {
   status: ProjectStatus;
   tags: string[];
   accent: string;
-  /** Repositorio del proyecto. */
-  repo: string;
+  /** Repositorio del proyecto. Si no hay uno público, omitir. */
+  repo?: string;
   /** Demo online; si no existe, el botón "Ver demo" abre el repositorio. */
   demo?: string;
   /** Vista ilustrativa propia del detalle; sin ella se usa una genérica. */
   preview?: 'query';
   /** Capturas reales (rutas dentro de /public). Se muestran antes de las ilustraciones. */
   images?: { src: string; alt: Record<Lang, string> }[];
+  /** Año del proyecto. */
+  year?: number;
   /** Imagen de portada en la card de proyectos. */
   cover?: string;
   wide?: boolean;
@@ -37,34 +39,34 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'db',
-    status: 'inProgress',
-    tags: ['Claude API', 'LangChain', 'NestJS', 'Python', 'PostgreSQL'],
-    accent: '#E0865C',
-    repo: links.github,
-    preview: 'query',
-  },
-  {
     id: 'voxa',
     status: 'inProgress',
     tags: ['Expo', 'React Native', 'Next.js', 'Supabase'],
     accent: '#A5687F',
-    repo: links.github,
+    year: 2026,
   },
   {
     id: 'market',
     status: 'inProgress',
     tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'React'],
-    accent: '#8F7BC4',
-    repo: links.github,
+    accent: '#B8901F',
+    year: 2026,
+  },
+  {
+    id: 'bike',
+    status: 'inProgress',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
+    accent: '#D9819F',
+    year: 2026,
   },
   {
     id: 'linkedunq',
     status: 'completed',
-    tags: ['React', 'NestJS', 'Prisma', 'Tailwind CSS', 'Vite', 'SQL', 'JavaScript', 'Jest'],
-    accent: '#B8901F',
-    repo: links.github,
-    cover: '/assets/projects/linkedunq-1.jpg',
+    tags: ['React', 'NestJS', 'Tailwind CSS', 'Vite', 'SQL', 'TypeScript', 'SCRUM'],
+    accent: '#5B82A0',
+    year: 2025,
+    demo: 'https://linked-unq.vercel.app/',
+    cover: '/assets/projects/linkedunq-portada.png',
     images: [
       {
         src: '/assets/projects/linkedunq-1.jpg',
@@ -91,11 +93,27 @@ export const projects: Project[] = [
     wide: true,
   },
   {
-    id: 'bike',
-    status: 'inProgress',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-    accent: '#D9819F',
-    repo: links.github,
+    id: 'epersgeist',
+    status: 'completed',
+    tags: ['Java', 'SQL', 'Spring Boot', 'Neo4j', 'MongoDB', 'Redis', 'JUnit'],
+    accent: '#8F7BC4',
+    year: 2025,
+    repo: 'https://github.com/luciaviazzo/epersgeist-polyglot-persistence',
+    cover: '/assets/projects/epersgeist-portada.png',
+    images: [
+      {
+        src: '/assets/projects/epersgeist-1.png',
+        alt: { es: 'Captura 1 de Epersgeist', en: 'Epersgeist screenshot 1' },
+      },
+      {
+        src: '/assets/projects/epersgeist-2.png',
+        alt: { es: 'Captura 2 de Epersgeist', en: 'Epersgeist screenshot 2' },
+      },
+      {
+        src: '/assets/projects/epersgeist-3.png',
+        alt: { es: 'Captura 3 de Epersgeist', en: 'Epersgeist screenshot 3' },
+      },
+    ],
     wide: true,
   },
 ];

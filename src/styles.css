@@ -44,6 +44,7 @@
   --link: color-mix(in srgb, var(--p, #E0865C) 55%, #fff);
   --tint-mix: #1C2026;
 }
+[data-theme='dark'] .modal-panel { --link: color-mix(in srgb, var(--p) 55%, #fff); }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -183,7 +184,9 @@ h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 500; line-height: 1.05;
 .pills em { height: 16px; width: 52px; border-radius: 999px; background: var(--p); }
 .pills em + em { width: 34px; background: color-mix(in srgb, var(--p) 18%, var(--tint-mix)); }
 .project-body { display: flex; flex: 1; flex-direction: column; padding: 20px 10px 10px; }
-.project h3 { font-size: 1.0625rem; font-weight: 500; }
+.project h3 { font-size: 1.0625rem; font-weight: 500; display: flex; align-items: baseline; gap: 8px; }
+.project-year { font-size: 0.75rem; font-weight: 400; color: var(--muted); }
+.modal-year { margin-left: 8px; font-size: 0.8125rem; font-weight: 400; color: var(--muted); }
 .project-body > p { margin-top: 8px; font-size: 0.8125rem; line-height: 1.6; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
 .tags li { font-size: 0.6875rem; font-weight: 500; padding: 4px 10px; border-radius: 6px; color: var(--link); background: color-mix(in srgb, var(--p) 20%, var(--tint-mix)); border: 1px solid color-mix(in srgb, var(--p) 45%, transparent); }
@@ -279,6 +282,7 @@ body:has(dialog[open]) { overflow: hidden; }
   width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow: hidden;
   background: var(--bg); border: 3px solid var(--p); border-radius: 20px;
   box-shadow: 0 0 0 10px color-mix(in srgb, var(--p) 22%, transparent), 0 24px 60px rgb(0 0 0 / .35);
+  --link: color-mix(in srgb, var(--p) 65%, #000);
 }
 .modal[open] { display: flex; align-items: center; }
 .modal::backdrop { background: rgb(28 32 38 / .72); }
@@ -336,6 +340,13 @@ body:has(dialog[open]) { overflow: hidden; }
 .modal-actions .more:hover { background: color-mix(in srgb, var(--p) 20%, var(--tint-mix)); }
 .modal-actions .more-primary { padding: 8px 20px; color: #fff; background: color-mix(in srgb, var(--p) 70%, #000); border-color: color-mix(in srgb, var(--p) 70%, #000); box-shadow: 0 4px 14px color-mix(in srgb, var(--p) 45%, transparent); }
 .modal-actions .more-primary:hover { background: color-mix(in srgb, var(--p) 58%, #000); }
+.unavailable-modal { position: fixed; inset: 0; margin: auto; padding: 0; border: none; background: transparent; width: fit-content; height: fit-content; }
+.unavailable-modal::backdrop { background: rgb(0 0 0 / .45); }
+.unavailable-panel { background: var(--bg); border: 2px solid var(--card-border); border-radius: 16px; padding: 32px 36px; text-align: center; min-width: 280px; box-shadow: 0 16px 48px rgb(0 0 0 / .25); animation: pop-in .2s cubic-bezier(.2,.7,.2,1); }
+.unavailable-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.unavailable-text { font-size: 0.9rem; color: var(--muted); margin-bottom: 24px; }
+.unavailable-close { padding: 8px 24px; background: var(--d-surface); color: var(--fg); border: 1px solid var(--card-border); border-radius: 8px; font: 500 0.875rem var(--font); cursor: pointer; transition: background .15s; }
+.unavailable-close:hover { background: var(--d-border); }
 .btn-accent { color: #fff; background: color-mix(in srgb, var(--p) 65%, #000); border-radius: 999px; }
 .btn-accent:hover { background: color-mix(in srgb, var(--p) 55%, #000); }
 .btn-outline { color: var(--text); background: var(--bg-2); border-color: var(--card-border); border-radius: 999px; }
