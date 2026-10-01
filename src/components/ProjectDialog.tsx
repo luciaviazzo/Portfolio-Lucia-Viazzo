@@ -91,48 +91,55 @@ function buildSlides(project: Project, t: Dict, lang: 'es' | 'en'): Slide[] {
 function Carousel({ slides }: { slides: Slide[] }) {
   const { t } = useI18n();
   const c = t.modal.carousel;
-  const track = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
+  const [leaving, setLeaving] = useState<number | null>(null);
+  const [dir, setDir] = useState<1 | -1>(1);
   const last = slides.length - 1;
 
   const goTo = (i: number) => {
-    const el = track.current;
-    if (!el) return;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    el.scrollTo({ left: i * el.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+    if (i === current) return;
+    setDir(i > current ? 1 : -1);
+    setLeaving(current);
+    setCurrent(i);
   };
 
   return (
     <div className="carousel" role="group" aria-roledescription={c.roleDescription} aria-label={c.label}>
       <div
         className="modal-preview"
+        tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'ArrowRight') { e.preventDefault(); goTo(Math.min(current + 1, last)); }
           if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(Math.max(current - 1, 0)); }
         }}
       >
-        <div
-          className="carousel-track"
-          ref={track}
-          tabIndex={0}
-          onScroll={(e) => {
-            const el = e.currentTarget;
-            setCurrent(Math.round(el.scrollLeft / el.clientWidth));
-          }}
-        >
-          {slides.map((s, i) => (
+        {slides.map((s, i) => {
+          const isActive = i === current;
+          const isLeaving = i === leaving;
+          return (
             <div
-              className={s.photo ? 'carousel-slide is-photo' : 'carousel-slide'}
-              style={s.photo ? ({ '--photo': `url(${s.photo})` } as CSSProperties) : undefined}
+              className={[
+                s.photo ? 'carousel-slide is-photo' : 'carousel-slide',
+                isActive ? 'is-active' : '',
+                isActive && leaving !== null ? 'is-enter' : '',
+                isLeaving ? 'is-leaving' : '',
+              ].filter(Boolean).join(' ')}
+              style={{
+                ...(s.photo ? { '--photo': `url(${s.photo})` } : {}),
+                ...(isActive && leaving !== null ? { '--from': `${dir}` } : {}),
+                ...(isLeaving ? { '--to': `${-dir}` } : {}),
+              } as CSSProperties}
               key={i}
               role="group"
               aria-roledescription={c.slideRoleDescription}
               aria-label={c.slideLabel(i + 1, slides.length, s.label)}
+              aria-hidden={i !== current}
+              onAnimationEnd={isLeaving ? () => setLeaving(null) : undefined}
             >
               {s.node}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
       <div className="carousel-dots">
         {slides.map((_, i) => (

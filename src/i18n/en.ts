@@ -60,13 +60,13 @@ export const en: Dict = {
         description:
           'Platform that calculates the market value of players from the top five leagues and lets you buy and sell their tokens.',
         kind: 'University project',
+        keywords: ['REST API', 'Scraping', 'Weekly valuation', 'Token portfolio'],
         about:
-          'A platform that calculates the market value of players from the top five leagues and lets you buy and sell tokens for each one.',
+          'Platform to buy and sell tokens for players from the top five leagues. Values are recalculated every week using data from WhoScored and Football-Data.org.',
         features: [
-          'Market value calculation for each player',
-          'Buying and selling tokens',
-          'NestJS API with TypeScript and PostgreSQL',
-          'React interface',
+          'Data from 5 leagues via WhoScored (scraping) and Football-Data.org, with local fallback if the source fails',
+          'Weekly valuation with configurable weighting strategies and price history',
+          'Buy and sell tokens with portfolio, average purchase price and profit/loss',
         ],
       },
       linkedunq: {

@@ -48,9 +48,10 @@ export const projects: Project[] = [
   {
     id: 'market',
     status: 'inProgress',
-    tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'React'],
+    tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Redis', 'React'],
     accent: '#B8901F',
     year: 2026,
+    repo: 'https://github.com/arodriguezfontana/desapp-gf',
     cover: '/assets/projects/futval-portada.png',
     images: [
       {

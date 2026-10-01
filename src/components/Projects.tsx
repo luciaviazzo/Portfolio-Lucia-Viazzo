@@ -4,7 +4,7 @@ import { useI18n } from '../i18n';
 import { Icon } from './Icon';
 import { ProjectDialog } from './ProjectDialog';
 
-function ProjectCard({ id, status, tags, accent, wide, cover, year, onOpen }: Project & { onOpen: () => void }) {
+function ProjectCard({ id, status, tags, accent, wide, cover, onOpen }: Omit<Project, 'year'> & { onOpen: () => void }) {
   const { t } = useI18n();
   const text = t.projects.items[id];
 

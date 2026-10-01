@@ -71,13 +71,13 @@ export const es = {
         description:
           'Plataforma que calcula el valor de mercado de jugadores de las cinco grandes ligas y permite comprar y vender sus tokens.',
         kind: 'Proyecto universitario',
+        keywords: ['API REST', 'Scraping', 'Cotización semanal', 'Portfolio de tokens'],
         about:
-          'Una plataforma que calcula el valor de mercado de jugadores de las cinco grandes ligas y permite comprar y vender tokens de cada uno.',
+          'Plataforma para comprar y vender tokens de jugadores de las cinco grandes ligas. Los valores se recalculan cada semana usando datos de WhoScored y Football-Data.org.',
         features: [
-          'Cálculo del valor de mercado de cada jugador',
-          'Compra y venta de tokens',
-          'API en NestJS con TypeScript y PostgreSQL',
-          'Interfaz en React',
+          'Datos de 5 ligas desde WhoScored (scraping) y Football-Data.org, con fallback local si falla la fuente',
+          'Cotización semanal con estrategias de ponderación configurables e historial de precios',
+          'Compra y venta de tokens con portfolio, precio promedio de compra y ganancia/pérdida',
         ],
       },
       linkedunq: {
