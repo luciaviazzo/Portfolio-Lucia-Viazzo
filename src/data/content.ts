@@ -51,6 +51,21 @@ export const projects: Project[] = [
     tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'React'],
     accent: '#B8901F',
     year: 2026,
+    cover: '/assets/projects/futval-portada.png',
+    images: [
+      {
+        src: '/assets/projects/futval-1.png',
+        alt: { es: 'Captura 1 de FULVAL', en: 'FULVAL screenshot 1' },
+      },
+      {
+        src: '/assets/projects/futval-2.png',
+        alt: { es: 'Captura 2 de FULVAL', en: 'FULVAL screenshot 2' },
+      },
+      {
+        src: '/assets/projects/futval-3.png',
+        alt: { es: 'Captura 3 de FULVAL', en: 'FULVAL screenshot 3' },
+      },
+    ],
   },
   {
     id: 'bike',
