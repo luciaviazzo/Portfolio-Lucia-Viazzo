@@ -193,9 +193,9 @@ GROUP BY p.name ORDER BY total DESC LIMIT 5;`,
   tech: {
     title: 'Technologies',
     groups: {
+      backend: 'Backend',
+      datos: 'Data',
       frontend: 'Frontend',
-      backend: 'Backend & data',
-      ai: 'AI & tools',
     },
     names: { 'Git y GitHub': 'Git & GitHub' },
   },

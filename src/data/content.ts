@@ -147,48 +147,37 @@ export interface Tech {
   mono?: boolean;
 }
 
-export type TechGroupId = 'frontend' | 'backend' | 'ai';
+export type TechGroupId = 'backend' | 'datos' | 'frontend';
 
 export const techGroups: { id: TechGroupId; accent: string; items: Tech[] }[] = [
+  {
+    id: 'backend',
+    accent: '#A5687F',
+    items: [
+      { name: 'TypeScript', devicon: 'typescript-plain' },
+      { name: 'NestJS', devicon: 'nestjs-plain' },
+      { name: 'Java', devicon: 'java-plain' },
+      { name: 'Spring Boot', devicon: 'spring-plain' },
+    ],
+  },
+  {
+    id: 'datos',
+    accent: '#8F7BC4',
+    items: [
+      { name: 'Python', devicon: 'python-plain' },
+      { name: 'PostgreSQL', devicon: 'postgresql-plain' },
+      { name: 'Redis', devicon: 'redis-plain' },
+      { name: 'MongoDB', devicon: 'mongodb-plain' },
+    ],
+  },
   {
     id: 'frontend',
     accent: '#E0865C',
     items: [
       { name: 'React', devicon: 'react-original' },
-      { name: 'TypeScript', devicon: 'typescript-plain' },
-      { name: 'Next.js', devicon: 'nextjs-plain', mono: true },
       { name: 'Vite', devicon: 'vitejs-plain' },
       { name: 'Tailwind CSS', devicon: 'tailwindcss-original' },
-      { name: 'Lit', color: '#324FFF' },
       { name: 'React Native', devicon: 'react-original' },
-    ],
-  },
-  {
-    id: 'backend',
-    accent: '#A5687F',
-    items: [
-      { name: 'Node.js', devicon: 'nodejs-plain' },
-      { name: 'NestJS', devicon: 'nestjs-plain' },
-      { name: 'Java', devicon: 'java-plain' },
-      { name: 'Spring Boot', devicon: 'spring-plain' },
-      { name: 'Python', devicon: 'python-plain' },
-      { name: 'PostgreSQL', devicon: 'postgresql-plain' },
-      { name: 'Supabase', devicon: 'supabase-plain' },
-    ],
-  },
-  {
-    id: 'ai',
-    accent: '#8F7BC4',
-    items: [
-      { name: 'Claude API', color: '#D97757' },
-      { name: 'LangChain', color: '#1C7C6B' },
-      { name: 'Whisper', color: '#10A37F' },
-      { name: 'Git y GitHub', devicon: 'github-original', mono: true },
-      { name: 'GitHub Actions', devicon: 'githubactions-plain' },
-      { name: 'Jest', devicon: 'jest-plain' },
-      { name: 'Testcontainers', devicon: 'docker-plain' },
-      { name: 'SonarCloud', devicon: 'sonarqube-plain' },
-      { name: 'Vercel', devicon: 'vercel-original', mono: true },
     ],
   },
 ];

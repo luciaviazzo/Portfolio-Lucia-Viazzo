@@ -205,9 +205,9 @@ GROUP BY p.nombre ORDER BY total DESC LIMIT 5;`,
   tech: {
     title: 'Tecnologías',
     groups: {
+      backend: 'Backend',
+      datos: 'Datos',
       frontend: 'Frontend',
-      backend: 'Backend y datos',
-      ai: 'IA y herramientas',
     },
     names: {} as Record<string, string>,
   },
