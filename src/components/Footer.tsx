@@ -18,7 +18,7 @@ export function Footer() {
             <a className="btn btn-secondary" href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
-        <p className="copy">© {new Date().getFullYear()} Lucia. {t.footer.made}</p>
+        <p className="copy">© {new Date().getFullYear()} Lucia Viazzo</p>
       </div>
     </footer>
   );
