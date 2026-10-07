@@ -39,6 +39,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'voxa',
+    status: 'inProgress',
+    tags: ['React Native', 'TypeScript', 'Next.js', 'Whisper', 'Llama 3.1'],
+    accent: '#A5687F',
+    year: 2026,
+    repo: 'https://github.com/luciaviazzo/voxa',
+    cover: '/assets/projects/voxa-portada.png',
+    images: [
+      { src: '/assets/projects/voxa-1.png', alt: { es: 'Captura 1 de Voxa', en: 'Voxa screenshot 1' } },
+      { src: '/assets/projects/voxa-2.png', alt: { es: 'Captura 2 de Voxa', en: 'Voxa screenshot 2' } },
+      { src: '/assets/projects/voxa-3.png', alt: { es: 'Captura 3 de Voxa', en: 'Voxa screenshot 3' } },
+    ],
+  },
+  {
     id: 'market',
     status: 'inProgress',
     tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Redis', 'React', 'SDD'],
@@ -62,25 +76,17 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'voxa',
-    status: 'inProgress',
-    tags: ['React Native', 'TypeScript', 'Next.js', 'Whisper', 'Llama 3.1'],
-    accent: '#A5687F',
-    year: 2026,
-    repo: 'https://github.com/luciaviazzo/voxa',
-    cover: '/assets/projects/voxa-portada.png',
-    images: [
-      { src: '/assets/projects/voxa-1.png', alt: { es: 'Captura 1 de Voxa', en: 'Voxa screenshot 1' } },
-      { src: '/assets/projects/voxa-2.png', alt: { es: 'Captura 2 de Voxa', en: 'Voxa screenshot 2' } },
-      { src: '/assets/projects/voxa-3.png', alt: { es: 'Captura 3 de Voxa', en: 'Voxa screenshot 3' } },
-    ],
-  },
-  {
     id: 'cuatri',
     status: 'inProgress',
     tags: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Python', 'SDD'],
     accent: '#D9819F',
     year: 2026,
+    cover: '/assets/projects/cuatri-portada.png',
+    images: [
+      { src: '/assets/projects/cuatri-1.png', alt: { es: 'Captura 1 de Cuatri', en: 'Cuatri screenshot 1' } },
+      { src: '/assets/projects/cuatri-2.png', alt: { es: 'Captura 2 de Cuatri', en: 'Cuatri screenshot 2' } },
+      { src: '/assets/projects/cuatri-3.png', alt: { es: 'Captura 3 de Cuatri', en: 'Cuatri screenshot 3' } },
+    ],
   },
   {
     id: 'linkedunq',
