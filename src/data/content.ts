@@ -13,7 +13,7 @@ export const links = {
 export const navIds = ['inicio', 'proyectos', 'sobre-mi', 'tecnologias', 'contacto'] as const;
 export type NavId = (typeof navIds)[number];
 
-export type ProjectId = 'voxa' | 'market' | 'linkedunq' | 'epersgeist' | 'bike';
+export type ProjectId = 'voxa' | 'market' | 'linkedunq' | 'epersgeist' | 'cuatri';
 
 export type ProjectStatus = 'completed' | 'inProgress';
 
@@ -39,16 +39,9 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'voxa',
-    status: 'inProgress',
-    tags: ['Expo', 'React Native', 'Next.js', 'Supabase'],
-    accent: '#A5687F',
-    year: 2026,
-  },
-  {
     id: 'market',
     status: 'inProgress',
-    tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Redis', 'React'],
+    tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Redis', 'React', 'SDD'],
     accent: '#B8901F',
     year: 2026,
     repo: 'https://github.com/arodriguezfontana/desapp-gf',
@@ -66,6 +59,20 @@ export const projects: Project[] = [
         src: '/assets/projects/futval-3.png',
         alt: { es: 'Captura 3 de FULVAL', en: 'FULVAL screenshot 3' },
       },
+    ],
+  },
+  {
+    id: 'voxa',
+    status: 'inProgress',
+    tags: ['React Native', 'TypeScript', 'Next.js', 'Whisper', 'Llama 3.1'],
+    accent: '#A5687F',
+    year: 2026,
+    repo: 'https://github.com/luciaviazzo/voxa',
+    cover: '/assets/projects/voxa-portada.png',
+    images: [
+      { src: '/assets/projects/voxa-1.png', alt: { es: 'Captura 1 de Voxa', en: 'Voxa screenshot 1' } },
+      { src: '/assets/projects/voxa-2.png', alt: { es: 'Captura 2 de Voxa', en: 'Voxa screenshot 2' } },
+      { src: '/assets/projects/voxa-3.png', alt: { es: 'Captura 3 de Voxa', en: 'Voxa screenshot 3' } },
     ],
   },
   {

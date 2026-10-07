@@ -49,14 +49,14 @@ export const en: Dict = {
         about:
           'A personal finance app designed for older adults: instead of forms and menus, you talk to it and it records and explains your expenses.',
         features: [
-          'Record expenses and income by voice',
-          'Mobile app with Expo and React Native',
-          'Web dashboard in Next.js',
-          'Data and authentication with Supabase',
+          'Records expenses and income by voice, no forms needed',
+          'Transcribes what you say with Whisper',
+          'Shows available balance on the home screen, and movements with expenses and income',
+          'Designed for older adults: large buttons, one action per screen and high contrast',
         ],
       },
       market: {
-        title: 'FULVAL',
+        title: 'FÚTVAL',
         description:
           'Platform that calculates the market value of players from the top five leagues and lets you buy and sell their tokens.',
         kind: 'University project',

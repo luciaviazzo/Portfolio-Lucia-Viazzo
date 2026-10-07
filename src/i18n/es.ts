@@ -55,19 +55,19 @@ export const es = {
     items: {
       voxa: {
         title: 'Voxa',
-        description: 'App de finanzas personales para personas mayores que se maneja hablando.',
+        description: 'App mobile de finanzas personales para personas mayores que se maneja hablando.',
         kind: 'Proyecto personal',
         about:
           'Una app de finanzas personales pensada para personas mayores: en lugar de formularios y menús, se le habla y ella registra y explica los gastos.',
         features: [
-          'Carga de gastos e ingresos por voz',
-          'App móvil con Expo y React Native',
-          'Panel web en Next.js',
-          'Datos y autenticación con Supabase',
+          'Registra gastos e ingresos por voz, sin formularios',
+          'Transcribe lo que decís con Whisper',
+          'Muestra el saldo disponible en el inicio, y los movimientos con gastos e ingresos',
+          'Pensada para personas mayores: botones grandes, una acción por pantalla y mucho contraste',
         ],
       },
       market: {
-        title: 'FULVAL',
+        title: 'FÚTVAL',
         description:
           'Plataforma que calcula el valor de mercado de jugadores de las cinco grandes ligas y permite comprar y vender sus tokens.',
         kind: 'Proyecto universitario',
