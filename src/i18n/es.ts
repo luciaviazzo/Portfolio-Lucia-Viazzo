@@ -213,8 +213,8 @@ GROUP BY p.nombre ORDER BY total DESC LIMIT 5;`,
     names: {} as Record<string, string>,
   },
   footer: {
-    title: '¿Hablamos?',
-    text: 'Estoy abierta a oportunidades como desarrolladora full stack junior y a proyectos desafiantes. Escribime y charlamos.',
+    title: '¿Construimos algo juntos?',
+    text: 'Siempre con ganas de aprender y sumarme a proyectos innovadores.',
     made: 'Hecho con cariño y mucho café.',
   },
 };

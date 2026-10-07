@@ -201,8 +201,8 @@ GROUP BY p.name ORDER BY total DESC LIMIT 5;`,
     names: { 'Git y GitHub': 'Git & GitHub' },
   },
   footer: {
-    title: 'Shall we talk?',
-    text: "I'm open to opportunities as a junior full stack developer and to challenging projects. Write to me and let's talk.",
+    title: 'Shall we build something together?',
+    text: 'Always eager to learn and join innovative projects.',
     made: 'Made with love and lots of coffee.',
   },
 };
