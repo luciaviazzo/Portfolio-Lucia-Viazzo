@@ -1,12 +1,3 @@
 node_modules
 dist
 *.local
-
-# Images
-public/assets/**/*.png
-public/assets/**/*.jpg
-public/assets/**/*.jpeg
-public/assets/**/*.webp
-public/assets/**/*.gif
-public/assets/**/*.svg
-public/assets/**/*.avif
