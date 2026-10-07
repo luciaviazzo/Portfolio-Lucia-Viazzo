@@ -76,9 +76,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'bike',
+    id: 'cuatri',
     status: 'inProgress',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
+    tags: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Python', 'SDD'],
     accent: '#D9819F',
     year: 2026,
   },

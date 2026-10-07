@@ -109,17 +109,17 @@ export const es = {
           'Caché con Redis',
         ],
       },
-      bike: {
-        title: 'Turia Bikes',
-        description: 'Reservá tours en bici y alquilá bicicletas, empezando por Buenos Aires.',
+      cuatri: {
+        title: 'Cuatri',
+        description: 'Gestor académico multi-carrera: cargás tu historial y la plataforma calcula qué podés cursar y genera opciones de cursada sin solapamientos.',
         kind: 'Proyecto personal',
-        about:
-          'Un marketplace para reservar tours en bici y alquilar bicicletas, empezando por Buenos Aires. Nace de mi experiencia trabajando en una empresa de bike tours.',
+        about: 'Gestor académico multi-carrera: cargás tu historial y la plataforma calcula qué podés cursar y genera opciones de cursada sin solapamientos.',
         features: [
-          'Reserva de tours en bici',
-          'Alquiler de bicicletas',
-          'Pagos con Stripe',
-          'Next.js con TypeScript y Tailwind CSS',
+          'Subís el plan de estudios en PDF y genera las correlativas automáticamente',
+          'Calcula el estado de cada materia según tus correlativas',
+          'Generá combinaciones de cursada sin solapamientos según tus días, turnos y cantidad de materias preferidas',
+          'Historial con notas y promedio automático',
+          'Multi-carrera: cada carrera tiene su propio plan, historial y oferta de comisiones',
         ],
       },
     } as Record<ProjectId, ProjectText>,

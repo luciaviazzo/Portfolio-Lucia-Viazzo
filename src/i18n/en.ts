@@ -98,17 +98,17 @@ export const en: Dict = {
           'Cache with Redis',
         ],
       },
-      bike: {
-        title: 'Turia Bikes',
-        description: 'Book bike tours and rent bikes, starting in Buenos Aires.',
+      cuatri: {
+        title: 'Cuatri',
+        description: 'Multi-degree academic manager: load your history and the platform calculates what you can take and generates schedule options without overlaps.',
         kind: 'Personal project',
-        about:
-          'A marketplace to book bike tours and rent bicycles, starting in Buenos Aires. It comes from my experience working at a bike tours company.',
+        about: 'Multi-degree academic manager: load your history and the platform calculates what you can take and generates schedule options without overlaps.',
         features: [
-          'Bike tour booking',
-          'Bicycle rental',
-          'Payments with Stripe',
-          'Next.js with TypeScript and Tailwind CSS',
+          'Upload the study plan as a PDF and it generates prerequisites automatically',
+          'Calculates the status of each subject based on your prerequisites',
+          'Generate schedule combinations without overlaps based on your preferred days, shifts and number of subjects',
+          'Grade history with automatic GPA',
+          'Multi-degree: each degree has its own plan, history and class schedule',
         ],
       },
     },
