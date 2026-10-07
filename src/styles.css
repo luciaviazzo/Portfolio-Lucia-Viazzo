@@ -382,7 +382,7 @@ body:has(dialog[open]) { overflow: hidden; }
 
 @media (max-width: 760px) {
     .modal-content { grid-template-columns: 1fr; gap: 16px; padding-inline: 16px; }
-  .modal-preview { height: auto; aspect-ratio: 3/4; }
+  .modal-preview { height: auto; aspect-ratio: 388/420; }
   .demo-rows li { grid-template-columns: 70px 1fr 28px; }
 }
 
