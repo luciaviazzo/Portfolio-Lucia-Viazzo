@@ -36,10 +36,10 @@ export const es = {
     switchLangCode: 'en',
   },
   hero: {
-    eyebrow: 'Desarrolladora full stack',
+    eyebrow: 'Software Developer',
     hi: 'Hola, soy',
-    lead: 'Programadora y estudiante universitaria, buscando mi primer rol como desarrolladora full stack.',
-    sub: 'Armo aplicaciones web completas: desde el backend y la base de datos hasta una interfaz que se entiende a la primera.',
+    lead: 'Desarrolladora de software con foco en backend y estudiante avanzada de la Licenciatura en Informática.',
+    sub: 'Me enfoco en construir soluciones escalables y aplicar buenas prácticas de diseño y arquitectura.',
     viewProjects: 'Ver proyectos',
     viewCv: 'Ver CV',
     newTab: ' (se abre en una pestaña nueva)',

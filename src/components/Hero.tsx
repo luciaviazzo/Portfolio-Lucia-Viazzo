@@ -11,7 +11,7 @@ export function Hero() {
       <div className="container hero-inner">
         <div className="hero-copy">
           <p className="eyebrow">{h.eyebrow}</p>
-          <h1 id="hero-title">{h.hi} <span className="accent">Lucia</span></h1>
+          <h1 id="hero-title">{h.hi} <span className="accent">Lucia Viazzo</span></h1>
           <p className="lead">{h.lead}</p>
           <p className="sub">{h.sub}</p>
           <div className="btn-row">

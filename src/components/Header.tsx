@@ -47,7 +47,7 @@ export function Header() {
       <div className="container header-inner">
         <a className="brand" href="#inicio" aria-label={t.header.homeAria}>
           <span className="brand-mark"><Icon name="code" /></span>
-          <span className="brand-name">Lucia</span>
+          <span className="brand-name">Lucia Viazzo</span>
         </a>
 
         <nav ref={navRef} className={open ? 'nav is-open' : 'nav'} id="menu-principal" aria-label={t.header.navAria}>

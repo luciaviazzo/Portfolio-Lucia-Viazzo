@@ -25,10 +25,10 @@ export const en: Dict = {
     switchLangCode: 'es',
   },
   hero: {
-    eyebrow: 'Full stack developer',
+    eyebrow: 'Software Developer',
     hi: "Hi, I'm",
-    lead: 'Programmer and university student, looking for my first role as a full stack developer.',
-    sub: 'I build complete web applications: from the backend and the database to an interface that makes sense at first glance.',
+    lead: 'Software developer focused on backend and advanced student of the Computer Science degree.',
+    sub: 'I focus on building scalable solutions and applying good design and architecture practices.',
     viewProjects: 'View projects',
     viewCv: 'View CV',
     newTab: ' (opens in a new tab)',
