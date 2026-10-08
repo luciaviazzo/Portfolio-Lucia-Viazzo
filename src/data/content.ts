@@ -81,6 +81,8 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Python', 'SDD'],
     accent: '#D9819F',
     year: 2026,
+    repo: 'https://github.com/luciaviazzo/Cuatri',
+    demo: 'https://cuatri.vercel.app/',
     cover: '/assets/projects/cuatri-portada.png',
     images: [
       { src: '/assets/projects/cuatri-1.png', alt: { es: 'Captura 1 de Cuatri', en: 'Cuatri screenshot 1' } },
