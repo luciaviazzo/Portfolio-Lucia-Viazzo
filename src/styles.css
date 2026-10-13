@@ -296,8 +296,8 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .modal-head p { font-size: 1rem; font-weight: 500; color: var(--muted); }
 
-.modal-content { flex: 1; min-height: 0; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; }
-.modal-info { display: flex; flex-direction: column; }
+.modal-content { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; overflow: hidden; }
+.modal-info { display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .modal-preview { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--p) 16%, var(--tint-mix)); }
 .carousel-slide { position: absolute; inset: 0; display: grid; place-items: center; padding: 14px 48px; visibility: hidden; pointer-events: none; }
 .carousel-slide.is-active, .carousel-slide.is-leaving { visibility: visible; }
@@ -512,22 +512,23 @@ body:has(dialog[open]) { overflow: hidden; }
   .modal-actions { margin-top: 14px; }
   .modal-nav { padding: 6px 0 10px; }
 }
-/* En móvil el contenido no cabe en una sola pantalla: ahí sí se desplaza el interior de la tarjeta. */
+/* En móvil: el panel ocupa toda la pantalla y el contenido scrollea */
 @media (max-width: 760px) {
-  .modal-panel { height: 100%; }
-  .modal-content { overflow-y: auto; overscroll-behavior: contain; }
+  .modal-panel { height: 100%; overflow: hidden; }
+  .modal-content { overflow-y: auto !important; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .modal-info { overflow-y: visible; }
 }
 
 /* Selector de idioma */
 .lang-btn { width: auto; min-width: 44px; padding: 0 12px; cursor: pointer; font: 600 0.8125rem/1 var(--font); letter-spacing: .04em; }
 
-/* El carrusel en escritorio: altura fija, el texto scrollea independientemente */
+/* Desktop: carousel ocupa toda la altura, modal-info scrollea */
 @media (min-width: 761px) {
-  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; overflow-y: visible; }
+  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; overflow: hidden; }
   .modal-visual { display: flex; min-height: 0; }
   .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
   .modal-preview { flex: 1; height: auto; min-height: 0; }
-  .modal-info { overflow-y: auto; min-height: 0; }
+  .modal-info { overflow-y: auto; min-height: 0; -webkit-overflow-scrolling: touch; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
