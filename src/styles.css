@@ -296,7 +296,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .modal-head p { font-size: 1rem; font-weight: 500; color: var(--muted); }
 
-.modal-content { flex: 1; min-height: 0; overflow-y: auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; }
+.modal-content { flex: 1; min-height: 0; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; }
 .modal-info { display: flex; flex-direction: column; }
 .modal-preview { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--p) 16%, var(--tint-mix)); }
 .carousel-slide { position: absolute; inset: 0; display: grid; place-items: center; padding: 14px 48px; visibility: hidden; pointer-events: none; }
@@ -523,10 +523,11 @@ body:has(dialog[open]) { overflow: hidden; }
 
 /* El carrusel en escritorio: altura fija, el texto scrollea independientemente */
 @media (min-width: 761px) {
-  .modal-content { grid-template-rows: auto; align-items: start; align-content: start; }
-  .modal-visual { display: flex; }
-  .carousel { display: flex; flex-direction: column; }
-  .modal-preview { height: 420px; }
+  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; overflow-y: visible; }
+  .modal-visual { display: flex; min-height: 0; }
+  .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+  .modal-preview { flex: 1; height: auto; min-height: 0; }
+  .modal-info { overflow-y: auto; min-height: 0; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
