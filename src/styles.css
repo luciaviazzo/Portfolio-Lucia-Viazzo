@@ -292,11 +292,11 @@ body:has(dialog[open]) { overflow: hidden; }
 .modal-head {
   flex: none;
   display: flex; align-items: center; justify-content: space-between;
-  padding: clamp(6px, 1.2vh, 10px) 20px; background: var(--bg); border-bottom: 1px solid var(--card-border);
+  padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--card-border);
 }
 .modal-head p { font-size: 1rem; font-weight: 500; color: var(--muted); }
 
-.modal-content { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(16px, 2.5vh, 28px); align-items: start; align-content: start; padding: clamp(12px, 2vh, 20px) 24px clamp(12px, 2vh, 24px); overflow: hidden; }
+.modal-content { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; overflow: hidden; }
 .modal-info { display: flex; flex-direction: column; }
 .modal-preview { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--p) 16%, var(--tint-mix)); }
 .carousel-slide { position: absolute; inset: 0; display: grid; place-items: center; padding: 14px 48px; visibility: hidden; pointer-events: none; }
@@ -328,19 +328,19 @@ body:has(dialog[open]) { overflow: hidden; }
 .g-chart span:nth-child(even) { background: color-mix(in srgb, var(--p) 45%, var(--tint-mix)); }
 
 .modal-caption { margin-top: 2px; text-align: center; font-size: 0.75rem; color: var(--muted); }
-.modal h2 { font-size: clamp(1.125rem, 3vw, 1.75rem); font-weight: 500; line-height: 1.2; margin-bottom: clamp(8px, 1.5vh, 14px); }
-.modal h3 { font-size: clamp(0.875rem, 1.5vh, 1rem); font-weight: 500; }
-.modal-about { margin: clamp(4px, 0.8vh, 6px) 0 clamp(8px, 1.5vh, 16px); font-size: clamp(0.75rem, 1.4vh, 0.8125rem); line-height: 1.55; color: var(--muted); }
-.modal-features { display: grid; gap: clamp(4px, 0.8vh, 8px); margin-top: clamp(4px, 0.8vh, 8px); }
-.modal-features li { display: flex; align-items: flex-start; gap: 10px; font-size: clamp(0.75rem, 1.4vh, 0.8125rem); line-height: 1.4; }
+.modal h2 { font-size: clamp(1.375rem, 3vw, 1.75rem); font-weight: 500; line-height: 1.2; margin-bottom: 14px; }
+.modal h3 { font-size: 1rem; font-weight: 500; }
+.modal-about { margin: 6px 0 16px; font-size: 0.8125rem; line-height: 1.65; color: var(--muted); }
+.modal-features { display: grid; gap: 8px; margin-top: 8px; }
+.modal-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8125rem; line-height: 1.45; }
 .modal-features li::before {
   content: ''; flex: none; width: 12px; height: 11px; margin-top: .3em;
   background: var(--p); border-radius: 6px 6px 6px 2px;
 }
-.modal-tech-title { margin-top: clamp(10px, 1.8vh, 18px); }
-.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: clamp(4px, 0.8vh, 8px); }
+.modal-tech-title { margin-top: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .chips li { padding: 3px 11px; font-size: 0.75rem; font-weight: 500; border-radius: 999px; color: var(--link); background: color-mix(in srgb, var(--p) 20%, var(--tint-mix)); border: 1px solid color-mix(in srgb, var(--p) 45%, transparent); }
-.modal-actions { display: flex; justify-content: flex-start; gap: 10px; margin-top: clamp(12px, 2vh, 22px); }
+.modal-actions { display: flex; justify-content: flex-start; gap: 10px; margin-top: 22px; }
 .modal-actions .more { margin-top: 0; padding: 8px 14px; gap: 4px; font-size: 0.8125rem; color: var(--link); border: 1px solid var(--p); border-radius: 8px; transition: background-color .15s; }
 .modal-actions .more:hover { background: color-mix(in srgb, var(--p) 20%, var(--tint-mix)); }
 .modal-actions .more-primary { padding: 8px 20px; color: #fff; background: color-mix(in srgb, var(--p) 70%, #000); border-color: color-mix(in srgb, var(--p) 70%, #000); box-shadow: 0 4px 14px color-mix(in srgb, var(--p) 45%, transparent); }
@@ -512,21 +512,24 @@ body:has(dialog[open]) { overflow: hidden; }
   .modal-actions { margin-top: 14px; }
   .modal-nav { padding: 6px 0 10px; }
 }
-/* Mobile: panel ocupa toda la pantalla, contenido se adapta */
+/* Mobile: panel full screen, carousel sticky arriba, texto scrollea */
 @media (max-width: 760px) {
   .modal-panel { height: 100%; }
-  .modal-content { overflow: hidden; }
+  .modal-content { overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .modal-info { overflow-y: visible; }
+  .modal-visual { position: sticky; top: 0; z-index: 1; background: var(--bg); padding-bottom: 8px; }
 }
 
 /* Selector de idioma */
 .lang-btn { width: auto; min-width: 44px; padding: 0 12px; cursor: pointer; font: 600 0.8125rem/1 var(--font); letter-spacing: .04em; }
 
-/* Desktop: carousel y texto ocupan toda la altura disponible */
+/* Desktop: carousel ocupa toda la altura, modal-info scrollea */
 @media (min-width: 761px) {
-  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; }
+  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; overflow: hidden; }
   .modal-visual { display: flex; min-height: 0; }
   .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
   .modal-preview { flex: 1; height: auto; min-height: 0; }
+  .modal-info { overflow-y: auto; min-height: 0; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
