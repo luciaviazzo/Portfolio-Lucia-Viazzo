@@ -13,7 +13,7 @@ export function Footer() {
             <p>{t.footer.text}</p>
           </div>
           <div className="btn-row">
-            <a className="btn btn-primary" href={`mailto:${links.email}`}>{links.email}</a>
+            <a className="btn btn-primary" href={`https://mail.google.com/mail/?view=cm&to=${links.email}`} target="_blank" rel="noopener noreferrer">{links.email}</a>
             <a className="btn btn-secondary" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a className="btn btn-secondary" href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>

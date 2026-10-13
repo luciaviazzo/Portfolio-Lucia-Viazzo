@@ -23,7 +23,7 @@ export function Hero() {
           <ul className="social" aria-label={h.socialAria}>
             <li><a className="icon-btn" href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon name="github" /></a></li>
             <li><a className="icon-btn" href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon name="linkedin" /></a></li>
-            <li><a className="icon-btn" href={`mailto:${links.email}`} aria-label={h.emailAria}><Icon name="mail" /></a></li>
+            <li><a className="icon-btn" href={`https://mail.google.com/mail/?view=cm&to=${links.email}`} target="_blank" rel="noopener noreferrer" aria-label={h.emailAria}><Icon name="mail" /></a></li>
           </ul>
         </div>
         <div className="hero-photo">
