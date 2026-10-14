@@ -515,7 +515,8 @@ body:has(dialog[open]) { overflow: hidden; }
 /* Mobile: panel full screen, carousel sticky arriba, texto scrollea */
 @media (max-width: 760px) {
   .modal-panel { height: 100%; }
-  .modal-content { overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .modal-content { overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .modal-content::-webkit-scrollbar { display: none; }
   .modal-info { overflow-y: visible; }
   .modal-visual { position: sticky; top: 0; z-index: 1; background: var(--bg); padding-bottom: 8px; }
 }
@@ -529,7 +530,8 @@ body:has(dialog[open]) { overflow: hidden; }
   .modal-visual { display: flex; min-height: 0; }
   .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
   .modal-preview { flex: 1; height: auto; min-height: 0; }
-  .modal-info { overflow-y: auto; min-height: 0; }
+  .modal-info { overflow-y: auto; min-height: 0; scrollbar-width: none; }
+  .modal-info::-webkit-scrollbar { display: none; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
