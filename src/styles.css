@@ -278,26 +278,30 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .modal-panel {
   display: flex; flex-direction: column; flex: none;
-  width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow-y: auto; overflow-x: hidden;
-  scrollbar-width: none;
+  width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow: hidden;
   background: var(--bg); border: 3px solid var(--p); border-radius: 20px;
   box-shadow: 0 0 0 10px color-mix(in srgb, var(--p) 22%, transparent), 0 24px 60px rgb(0 0 0 / .35);
   --link: color-mix(in srgb, var(--p) 65%, #000);
 }
-.modal-panel::-webkit-scrollbar { display: none; }
+.carousel { touch-action: pan-y; }
 .modal[open] { display: flex; align-items: center; }
 .modal::backdrop { background: rgb(28 32 38 / .72); }
 .modal[open] { animation: modal-in .2s ease-out; }
 @keyframes modal-in { from { opacity: 0; transform: translateY(8px); } }
 
 .modal-head {
-  flex: none; position: sticky; top: 0; z-index: 2;
+  flex: none;
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--card-border);
 }
 .modal-head p { font-size: 1rem; font-weight: 500; color: var(--muted); }
 
-.modal-content { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; overflow: hidden; }
+.modal-content { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; align-content: start; padding: 20px 24px 24px; overflow-y: scroll; overflow-x: hidden; }
+.modal-content::-webkit-scrollbar { width: 4px; }
+.modal-content::-webkit-scrollbar-track { background: transparent; }
+.modal-content::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 999px; }
+.modal-content::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--p) 60%, var(--card-border)); }
+.modal-content { scrollbar-width: thin; scrollbar-color: var(--card-border) transparent; }
 .modal-info { display: flex; flex-direction: column; }
 .modal-preview { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--p) 16%, var(--tint-mix)); }
 .carousel-slide { position: absolute; inset: 0; display: grid; place-items: center; padding: 14px 48px; visibility: hidden; pointer-events: none; }
@@ -399,7 +403,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .modal-btn:hover { border-color: var(--p); }
 .modal-btn .icon { width: 16px; height: 16px; }
 .modal-close { margin-left: 8px; }
-.modal-nav { flex: none; position: sticky; bottom: 0; z-index: 2; background: var(--bg); display: flex; justify-content: space-between; gap: 16px; margin: 0; padding: 14px 24px 18px; border-top: 1px solid var(--card-border); }
+.modal-nav { flex: none; display: flex; justify-content: space-between; gap: 16px; margin: 0 24px; padding: 14px 0 18px; border-top: 1px solid var(--card-border); }
 .modal-nav button {
   display: flex; align-items: center; gap: 12px; padding: 8px 6px; cursor: pointer;
   font: 600 0.9375rem/1.35 var(--font); color: var(--text); background: none; border: 0; border-radius: 8px; text-align: left;
@@ -513,19 +517,17 @@ body:has(dialog[open]) { overflow: hidden; }
   .modal-actions { margin-top: 14px; }
   .modal-nav { padding: 6px 0 10px; }
 }
-/* Mobile: panel full screen */
+/* Mobile */
 @media (max-width: 760px) {
-  .modal-panel { height: 100%; }
-  .modal-visual { position: sticky; top: 52px; background: var(--bg); padding-bottom: 8px; }
+  .modal-panel { height: 100%; overflow: hidden; }
 }
 
 /* Selector de idioma */
 .lang-btn { width: auto; min-width: 44px; padding: 0 12px; cursor: pointer; font: 600 0.8125rem/1 var(--font); letter-spacing: .04em; }
 
-/* Desktop: carousel fijo a la izquierda */
+/* Desktop */
 @media (min-width: 761px) {
-  .modal-content { grid-template-rows: auto; align-items: start; }
-  .modal-visual { position: sticky; top: 52px; }
+  .modal-preview { height: 420px; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
