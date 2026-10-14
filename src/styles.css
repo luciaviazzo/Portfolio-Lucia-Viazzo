@@ -277,20 +277,21 @@ body:has(dialog[open]) { overflow: hidden; }
   color: var(--text); background: transparent; border: 0;
 }
 .modal-panel {
-  /* Tamaño fijo y sin scroll: todas las tarjetas miden lo mismo y el contenido está pensado para entrar. */
   display: flex; flex-direction: column; flex: none;
-  width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow: hidden;
+  width: min(980px, 100%); height: min(720px, 100%); margin: 0 auto; overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: none;
   background: var(--bg); border: 3px solid var(--p); border-radius: 20px;
   box-shadow: 0 0 0 10px color-mix(in srgb, var(--p) 22%, transparent), 0 24px 60px rgb(0 0 0 / .35);
   --link: color-mix(in srgb, var(--p) 65%, #000);
 }
+.modal-panel::-webkit-scrollbar { display: none; }
 .modal[open] { display: flex; align-items: center; }
 .modal::backdrop { background: rgb(28 32 38 / .72); }
 .modal[open] { animation: modal-in .2s ease-out; }
 @keyframes modal-in { from { opacity: 0; transform: translateY(8px); } }
 
 .modal-head {
-  flex: none;
+  flex: none; position: sticky; top: 0; z-index: 2;
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--card-border);
 }
@@ -398,7 +399,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .modal-btn:hover { border-color: var(--p); }
 .modal-btn .icon { width: 16px; height: 16px; }
 .modal-close { margin-left: 8px; }
-.modal-nav { flex: none; display: flex; justify-content: space-between; gap: 16px; margin: 0 24px; padding: 14px 0 18px; border-top: 1px solid var(--card-border); }
+.modal-nav { flex: none; position: sticky; bottom: 0; z-index: 2; background: var(--bg); display: flex; justify-content: space-between; gap: 16px; margin: 0; padding: 14px 24px 18px; border-top: 1px solid var(--card-border); }
 .modal-nav button {
   display: flex; align-items: center; gap: 12px; padding: 8px 6px; cursor: pointer;
   font: 600 0.9375rem/1.35 var(--font); color: var(--text); background: none; border: 0; border-radius: 8px; text-align: left;
@@ -512,26 +513,19 @@ body:has(dialog[open]) { overflow: hidden; }
   .modal-actions { margin-top: 14px; }
   .modal-nav { padding: 6px 0 10px; }
 }
-/* Mobile: panel full screen, carousel sticky arriba, texto scrollea */
+/* Mobile: panel full screen */
 @media (max-width: 760px) {
   .modal-panel { height: 100%; }
-  .modal-content { overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .modal-content::-webkit-scrollbar { display: none; }
-  .modal-info { overflow-y: visible; }
-  .modal-visual { position: sticky; top: 0; z-index: 1; background: var(--bg); padding-bottom: 8px; }
+  .modal-visual { position: sticky; top: 52px; background: var(--bg); padding-bottom: 8px; }
 }
 
 /* Selector de idioma */
 .lang-btn { width: auto; min-width: 44px; padding: 0 12px; cursor: pointer; font: 600 0.8125rem/1 var(--font); letter-spacing: .04em; }
 
-/* Desktop: carousel ocupa toda la altura, modal-info scrollea */
+/* Desktop: carousel fijo a la izquierda */
 @media (min-width: 761px) {
-  .modal-content { grid-template-rows: minmax(0, 1fr); align-items: stretch; align-content: stretch; overflow: hidden; }
-  .modal-visual { display: flex; min-height: 0; }
-  .carousel { display: flex; flex: 1; flex-direction: column; min-height: 0; }
-  .modal-preview { flex: 1; height: auto; min-height: 0; }
-  .modal-info { overflow-y: auto; min-height: 0; scrollbar-width: none; }
-  .modal-info::-webkit-scrollbar { display: none; }
+  .modal-content { grid-template-rows: auto; align-items: start; }
+  .modal-visual { position: sticky; top: 52px; }
   .g-chart { height: min(260px, 60%); }
 }
 @media (min-width: 761px) {
